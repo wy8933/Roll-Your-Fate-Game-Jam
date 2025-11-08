@@ -7,7 +7,7 @@ public class NoteCollection : MonoBehaviour, IInteractable
 
     public Transform Transform => gameObject.transform;
 
-    private string _prompt;
+    [SerializeField]private string _prompt;
     public string Prompt => _prompt;
 
     public CollectedStickyNoteSO collectedStickyNoteSO;
@@ -19,6 +19,7 @@ public class NoteCollection : MonoBehaviour, IInteractable
         if (Instance == null)
         {
             Instance = this;
+            collectedStickyNoteSO.collectedNote.Clear();
         }
         else 
         {
@@ -28,12 +29,13 @@ public class NoteCollection : MonoBehaviour, IInteractable
 
     public bool CanInteract(GameObject player)
     {
-        return false;
+        return true;
     }
 
     public bool Interact()
     {
         collectedStickyNotePanel.SetActive(true);
-        return false;
+        collectedStickyNotePanel.GetComponent<NoteCollectionUIManager>().SetUp(collectedStickyNoteSO);
+        return true;
     }
 }

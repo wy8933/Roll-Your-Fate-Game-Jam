@@ -8,7 +8,7 @@ public struct NoteData
 {
     public int ID;
     public string Name; 
-    public string Description;
+    public string Text;
 }
 
 public class Notes : MonoBehaviour, IInteractable

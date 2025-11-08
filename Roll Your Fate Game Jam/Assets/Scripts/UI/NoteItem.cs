@@ -4,11 +4,11 @@ using UnityEngine;
 public class NoteItem : MonoBehaviour
 {
     public TMP_Text noteID;
-    public TMP_Text noteText;
+    public TMP_Text noteTitle;
 
-    public void SetNote(int id, string text) 
+    public void SetNote(int id, string name) 
     {
         noteID.text = "LOG " + id.ToString();
-        noteText.text = text;   
+        noteTitle.text = name;   
     }
 }
