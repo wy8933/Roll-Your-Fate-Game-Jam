@@ -77,13 +77,14 @@ public class PlayerInteraction : MonoBehaviour
 
     public void OnInteract() 
     {
+        Debug.Log("Interact successful");
+
         if(_current != null)
             _current.Interact();
     }
 
     private IInteractable FindBestTarget()
     {
-        Debug.Log(_interactableInRange.Count);
         if (_interactableInRange.Count == 0) return null;
 
         IInteractable best = null;
@@ -99,7 +100,6 @@ public class PlayerInteraction : MonoBehaviour
             float distance = (i.Transform.position - here).sqrMagnitude;
             if (distance < bestSqr) { bestSqr = distance; best = i; }
         }
-        Debug.Log("Best is " + best);
         return best;
     }
 }
