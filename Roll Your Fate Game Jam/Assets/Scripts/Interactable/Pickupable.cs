@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Pickupable : MonoBehaviour, IInteractable
 {
-    public Transform Transform => gameObject.transform;
+    public Transform Transform => transform;
 
     [SerializeField] private string _prompt = "Interact";
     public string Prompt => _prompt;
@@ -16,8 +16,13 @@ public class Pickupable : MonoBehaviour, IInteractable
 
     public bool Interact()
     {
+        if (item == null) 
+        {
+            return false;
+        }
         Inventory.Instance.AddItem(item);
-
-        return false;
+        Destroy(gameObject);
+        Inventory.Instance.LoadUI();
+        return true;
     }
 }
