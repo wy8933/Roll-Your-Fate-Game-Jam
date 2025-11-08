@@ -1,26 +1,29 @@
 using System;
+using Template;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Control
 {
-    public class PlayerInputHandler : MonoBehaviour
+    public class PlayerInputHandler : SingletonBehavior<PlayerInputHandler>
     {
         private InputSystem_Actions inputAction;
         public Vector2 InputVector => inputAction.Player.Move.ReadValue<Vector2>();
 
         public Action Interact;
-        private void Awake()
+        
+        protected override void Awake()
         {
+            base.Awake();
             inputAction = new InputSystem_Actions();
         }
 
-        private void Start()
+        void Start()
         {
             inputAction.Player.Interact.performed += OnInteractPressed;
         }
 
-        private void OnDestroy()
+        void OnDestroy()
         {
             inputAction.Player.Interact.performed -= OnInteractPressed;
         }
@@ -35,9 +38,10 @@ namespace Control
             inputAction.Player.Disable();
         }
 
-        public void OnInteractPressed(InputAction.CallbackContext ctx)
+        protected void OnInteractPressed(InputAction.CallbackContext ctx)
         {
             Interact?.Invoke();
+            Debug.Log("Interact");
         }
     }
 }

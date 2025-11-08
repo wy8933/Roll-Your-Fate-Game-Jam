@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Control;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,18 +10,14 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private TMP_Text _promptUI;
     private IInteractable _current;
 
-    [SerializeField] private InputActionReference interactAction;
-
     private void OnEnable()
     {
-        interactAction.action.Enable();
-        interactAction.action.performed += OnInteract;
+        PlayerInputHandler.Instance.Interact += OnInteract;
     }
 
     private void OnDisable()
     {
-        interactAction.action.Disable();
-        interactAction.action.performed -= OnInteract;
+        PlayerInputHandler.Instance.Interact -= OnInteract;
     }
 
     private void Update()
@@ -77,9 +74,10 @@ public class PlayerInteraction : MonoBehaviour
     }
 
 
-    public void OnInteract(InputAction.CallbackContext context) 
+    public void OnInteract() 
     {
-        _current.Interact();
+        if(_current != null)
+            _current.Interact();
     }
 
     private IInteractable FindBestTarget()

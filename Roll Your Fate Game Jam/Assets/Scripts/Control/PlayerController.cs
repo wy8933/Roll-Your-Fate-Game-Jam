@@ -5,7 +5,7 @@ using Utility;
 
 namespace Control
 {
-    public class PlayerController : MonoBehaviour, IContactReceiver
+    public class PlayerController : MonoBehaviour
     {
         const double eps = 1e-4;
 
@@ -21,24 +21,20 @@ namespace Control
 
         #region Components
         private Rigidbody RB;
-        private PlayerInputHandler playerInput;
         #endregion
 
         private void Awake()
         {
             RB = GetComponent<Rigidbody>();
-            playerInput = GetComponent<PlayerInputHandler>();
         }
 
         private void Start()
         {
-            playerInput.Enable();
-            playerInput.Interact += Interact;
+            PlayerInputHandler.Instance.Enable();
         }
 
         private void OnDestroy()
         {
-            playerInput.Interact -= Interact;
         }
 
         private void Update()
@@ -54,7 +50,7 @@ namespace Control
 
         void Move()
         {
-            Vector3 targetDirection = new Vector3(playerInput.InputVector.normalized.x, 0, playerInput.InputVector.normalized.y);
+            Vector3 targetDirection = new Vector3(PlayerInputHandler.Instance.InputVector.normalized.x, 0, PlayerInputHandler.Instance.InputVector.normalized.y);
             
             if (targetDirection.magnitude > eps)
             {
@@ -89,48 +85,43 @@ namespace Control
 
         public void EnableControl()
         {
-            playerInput.Enable();
+            PlayerInputHandler.Instance.Enable();
         }
         
         public void DisableControl()
         {
-            playerInput.Disable();
+            PlayerInputHandler.Instance.Disable();
         }
 
         #region Interaction
         
-        List<Interactable> interactionTargets = new List<Interactable>();
-        public void HandleReceivedContact(ContactContext context) // Handle contacts sent from the child called detection box
-        {
-            GameObject senderObj = context.sender.gameObject;
-            
-            Interactable interactableObject = senderObj.GetComponent<Interactable>();
-            if (interactableObject != null)
-            {
-                if (context.contactType == ContactType.OnTriggerEnter)
-                {
-                    interactionTargets.Add(interactableObject);
-                }
-                else if(context.contactType == ContactType.OnTriggerExit)
-                {
-                    interactionTargets.Remove(interactableObject);
-                }
-            }
-        }
+        // List<IInteractable> interactionTargets = new List<IInteractable>();
+        // public void HandleReceivedContact(ContactContext context) // Handle contacts sent from the child called detection box
+        // {
+        //     GameObject senderObj = context.sender.gameObject;
+        //     
+        //     IInteractable interactableObject = senderObj.GetComponent<IInteractable>();
+        //     if (interactableObject != null)
+        //     {
+        //         if (context.contactType == ContactType.OnTriggerEnter)
+        //         {
+        //             interactionTargets.Add(interactableObject);
+        //         }
+        //         else if(context.contactType == ContactType.OnTriggerExit)
+        //         {
+        //             interactionTargets.Remove(interactableObject);
+        //         }
+        //     }
+        // }
 
         public void Interact()
         {
-            if(interactionTargets.Count > 0)
-                interactionTargets[0].Interacted();
+            
         }
 
         #endregion
     }
 
-    public interface Interactable // Just a placeholder
-    {
-        void Interacted();
-    }
 
     [Serializable]
     public class CharacterMovementParameter
