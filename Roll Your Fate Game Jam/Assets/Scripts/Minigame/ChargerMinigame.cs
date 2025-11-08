@@ -44,7 +44,7 @@ namespace Minigame
 
             if (currentValue >= endGameValue) 
             {
-                Clear();
+                GameClear();
             }
         }
 
