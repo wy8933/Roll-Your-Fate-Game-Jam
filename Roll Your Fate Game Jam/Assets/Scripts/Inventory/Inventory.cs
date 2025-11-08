@@ -6,6 +6,11 @@ public class Inventory : MonoBehaviour
     public List<ItemSO> items = new List<ItemSO>();
     public List<ItemBlockUI> itemBlocks = new List<ItemBlockUI>();
 
+    public void Start()
+    {
+        LoadUI();
+    }
+
     public void AddItem(ItemSO item) 
     {
         if(items.Count <= 5 && item !=null)
