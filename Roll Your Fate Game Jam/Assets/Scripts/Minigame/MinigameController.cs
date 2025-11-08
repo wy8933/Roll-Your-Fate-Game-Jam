@@ -17,7 +17,7 @@ namespace Minigame
         
         bool isInitialized = false;
         
-        public float timer = 0f;
+        protected float timer = 0f;
 
         protected virtual void Update()
         {
@@ -33,7 +33,8 @@ namespace Minigame
             PlayerInputHandler.Instance.RightClick += OnRightClick;
             if(!isInitialized)
                 Initialize();
-            EventSystem.current.SetSelectedGameObject(firstSelectedButton);
+            if(firstSelectedButton != null)
+                EventSystem.current.SetSelectedGameObject(firstSelectedButton);
             status = Status.Progressing;
         }
 
@@ -67,7 +68,7 @@ namespace Minigame
         }
 
 
-        public virtual void Abort()
+        public virtual void GameAbort()
         {
             status = Status.Aborted;
             if (ResetAfterEveryRun)
@@ -75,7 +76,7 @@ namespace Minigame
             gameObject.SetActive(false);
         }
 
-        public virtual void Clear()
+        public virtual void GameClear()
         {
             status =  Status.Cleared;
             gameObject.SetActive(false);

@@ -331,7 +331,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7653822394780455369}
         m_TargetAssemblyTypeName: Minigame.MinigameController, Assembly-CSharp
-        m_MethodName: Abort
+        m_MethodName: GameAbort
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -464,7 +464,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7653822394780455369}
         m_TargetAssemblyTypeName: Minigame.MinigameController, Assembly-CSharp
-        m_MethodName: Clear
+        m_MethodName: GameClear
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

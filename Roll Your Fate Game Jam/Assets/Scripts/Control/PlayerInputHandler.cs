@@ -32,6 +32,7 @@ namespace Control
         {
             inputAction.Player.Interact.performed += OnInteractPressed;
             inputAction.Player.ToggleHUD.performed += OnToggleHUDPressed;
+            inputAction.UI.Navigate.performed += OnNavigate;
             inputAction.UI.Click.performed += OnUIClick;
             inputAction.UI.RightClick.performed += OnUIRightClick;
             currentActionMap = ActionMap.Player;
@@ -41,6 +42,7 @@ namespace Control
         {
             inputAction.Player.Interact.performed -= OnInteractPressed;
             inputAction.Player.ToggleHUD.performed -= OnToggleHUDPressed;
+            inputAction.UI.Navigate.performed -= OnNavigate;
             inputAction.UI.Click.performed -= OnUIClick;
             inputAction.UI.RightClick.performed -= OnUIRightClick;
         }
@@ -81,12 +83,18 @@ namespace Control
         protected void OnInteractPressed(InputAction.CallbackContext ctx)
         {
             Interact?.Invoke();
-            Debug.Log("Interact Pressed");
+            // Debug.Log("Interact Pressed");
         }
 
         protected void OnToggleHUDPressed(InputAction.CallbackContext ctx)
         {
             ToggleHUD?.Invoke();
+        }
+        
+        protected void OnNavigate(InputAction.CallbackContext ctx)
+        {
+            Vector2 value = ctx.ReadValue<Vector2>();
+            Navigate?.Invoke(value);
         }
         
         protected void OnUIClick(InputAction.CallbackContext ctx)
