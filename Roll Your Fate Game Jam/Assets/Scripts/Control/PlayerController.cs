@@ -9,6 +9,11 @@ namespace Control
     {
         const double eps = 1e-4;
 
+        #region Components
+        [SerializeField] private Transform characterTransform;
+        private Rigidbody RB;
+        #endregion
+        
         #region Kinematic
         [SerializeField]
         private CharacterMovementParameter movementParam;
@@ -20,9 +25,6 @@ namespace Control
         private Vector3 velocity = Vector3.zero;
         #endregion
 
-        #region Components
-        private Rigidbody RB;
-        #endregion
 
         private void Awake()
         {
@@ -64,22 +66,17 @@ namespace Control
                     velocity = Vector3.zero;
             }
             Vector3 newPosition = RB.position + velocity * Time.fixedDeltaTime;
+            RB.MovePosition(newPosition);
 
-            Quaternion newRotation;
             if (targetDirection.magnitude > eps)
             {
                 Quaternion targetRotation = Quaternion.LookRotation(targetDirection, Vector3.up);
-                newRotation = Quaternion.Lerp(
-                    transform.rotation,
+                characterTransform.rotation = Quaternion.Lerp(
+                    characterTransform.rotation,
                     targetRotation,
                     RotateSpeed * Time.fixedDeltaTime); // smooth rotation
             }
-            else
-            {
-                newRotation = RB.rotation;
-            }
             
-            RB.Move(newPosition, newRotation);
         }
 
         #endregion
