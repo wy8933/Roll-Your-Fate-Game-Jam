@@ -29,11 +29,16 @@ namespace InventorySystem
             LoadUI();
         }
 
-        public void AddItem(ItemSO item) 
+        public bool AddItem(ItemSO item) 
         {
             // if the max item cound is not met, add it to the inventory
-            if(items.Count <= maxItemCount && item !=null)
+            if (items.Count < maxItemCount && item != null)
+            {
                 items.Add(item);
+                return true;
+            }
+            else
+                return false;
         }
 
         public void RemoveItem(string itemID) 

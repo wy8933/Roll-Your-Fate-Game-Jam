@@ -44,6 +44,7 @@ namespace Control
         protected void OnInteractPressed(InputAction.CallbackContext ctx)
         {
             Interact?.Invoke();
+            Debug.Log("Interact Pressed");
         }
 
         protected void OnToggleHUDPressed(InputAction.CallbackContext ctx)
