@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03fb5e7aea6af3546bc558f590aad80c, type: 3}
-  m_Name: ItemSO
+  m_Name: BatterySO
   m_EditorClassIdentifier: 
-  itemID: 10086
-  itemName: TestItem
-  itemIcon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  itemID: 2
+  itemName: Battery
+  itemIcon: {fileID: 21300000, guid: fd056b8306aae5e4fa9ec94f04ca48f9, type: 3}
