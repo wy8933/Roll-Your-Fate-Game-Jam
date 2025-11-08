@@ -11,6 +11,7 @@ namespace Control
         public Vector2 InputVector => inputAction.Player.Move.ReadValue<Vector2>();
 
         public Action Interact;
+        public Action ToggleHUD;
         
         protected override void Awake()
         {
@@ -21,11 +22,13 @@ namespace Control
         void Start()
         {
             inputAction.Player.Interact.performed += OnInteractPressed;
+            inputAction.Player.ToggleHUD.performed += OnToggleHUDPressed;
         }
 
         void OnDestroy()
         {
             inputAction.Player.Interact.performed -= OnInteractPressed;
+            inputAction.Player.ToggleHUD.performed -= OnToggleHUDPressed;
         }
 
         public void Enable()
@@ -41,7 +44,11 @@ namespace Control
         protected void OnInteractPressed(InputAction.CallbackContext ctx)
         {
             Interact?.Invoke();
-            Debug.Log("Interact");
+        }
+
+        protected void OnToggleHUDPressed(InputAction.CallbackContext ctx)
+        {
+            ToggleHUD?.Invoke();
         }
     }
 }

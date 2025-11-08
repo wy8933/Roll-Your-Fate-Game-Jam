@@ -1,92 +1,91 @@
 using System.Collections.Generic;
-using Control;
-using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class PlayerInteraction : MonoBehaviour
-{
-    private List<IInteractable> _interactableInRange = new List<IInteractable>();
-    private IInteractable _current;
-
-    private void Start()
+namespace Control { 
+    public class PlayerInteraction : MonoBehaviour
     {
-        PlayerInputHandler.Instance.Interact += OnInteract;
-    }
+        private List<IInteractable> _interactableInRange = new List<IInteractable>();
+        private IInteractable _current;
 
-    private void OnDestroy()
-    {
-        PlayerInputHandler.Instance.Interact -= OnInteract;
-    }
-
-    private void Update()
-    {
-        _current = FindBestTarget();
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.TryGetComponent<IInteractable>(out var interactable)) 
+        private void Start()
         {
-            if (interactable != null && !_interactableInRange.Contains(interactable))
-            {
-                _interactableInRange.Add(interactable);
-            } 
+            PlayerInputHandler.Instance.Interact += OnInteract;
         }
-        else
+
+        private void OnDestroy()
         {
-            interactable = other.GetComponentInParent<IInteractable>();
-            if (interactable != null)
+            PlayerInputHandler.Instance.Interact -= OnInteract;
+        }
+
+        private void Update()
+        {
+            _current = FindBestTarget();
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.TryGetComponent<IInteractable>(out var interactable)) 
             {
-                _interactableInRange.Add(interactable);
+                if (interactable != null && !_interactableInRange.Contains(interactable))
+                {
+                    _interactableInRange.Add(interactable);
+                } 
+            }
+            else
+            {
+                interactable = other.GetComponentInParent<IInteractable>();
+                if (interactable != null)
+                {
+                    _interactableInRange.Add(interactable);
+                }
             }
         }
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.TryGetComponent<IInteractable>(out var interactable))
+        private void OnTriggerExit(Collider other)
         {
-            if (interactable != null && _interactableInRange.Contains(interactable))
+            if (other.TryGetComponent<IInteractable>(out var interactable))
             {
+                if (interactable != null && _interactableInRange.Contains(interactable))
+                {
 
-                _interactableInRange.Remove(interactable);
+                    _interactableInRange.Remove(interactable);
+                }
+            }
+            else
+            {
+                interactable = other.GetComponentInParent<IInteractable>();
+                if (interactable != null)
+                {
+                    _interactableInRange.Remove(interactable);
+                }
             }
         }
-        else
+
+
+        public void OnInteract() 
         {
-            interactable = other.GetComponentInParent<IInteractable>();
-            if (interactable != null)
+            if(_current != null)
+                _current.Interact();
+        }
+
+        private IInteractable FindBestTarget()
+        {
+            if (_interactableInRange.Count == 0) return null;
+
+            IInteractable best = null;
+            float bestSqr = float.MaxValue;
+            Vector3 here = transform.position;
+
+            for (int n = _interactableInRange.Count - 1; n >= 0; n--)
             {
-                _interactableInRange.Remove(interactable);
+                IInteractable i = _interactableInRange[n];
+                if (i == null) { _interactableInRange.RemoveAt(n); continue; }
+                if (!i.CanInteract(gameObject)) continue;
+
+                float distance = (i.Transform.position - here).sqrMagnitude;
+                if (distance < bestSqr) { bestSqr = distance; best = i; }
             }
+            return best;
         }
-    }
-
-
-    public void OnInteract() 
-    {
-        if(_current != null)
-            _current.Interact();
-    }
-
-    private IInteractable FindBestTarget()
-    {
-        if (_interactableInRange.Count == 0) return null;
-
-        IInteractable best = null;
-        float bestSqr = float.MaxValue;
-        Vector3 here = transform.position;
-
-        for (int n = _interactableInRange.Count - 1; n >= 0; n--)
-        {
-            IInteractable i = _interactableInRange[n];
-            if (i == null) { _interactableInRange.RemoveAt(n); continue; }
-            if (!i.CanInteract(gameObject)) continue;
-
-            float distance = (i.Transform.position - here).sqrMagnitude;
-            if (distance < bestSqr) { bestSqr = distance; best = i; }
-        }
-        return best;
     }
 }

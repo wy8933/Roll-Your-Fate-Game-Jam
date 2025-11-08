@@ -1,56 +1,60 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UI;
 
-public class Inventory : MonoBehaviour
-{
-    public static Inventory Instance;
-
-    public List<ItemSO> items = new List<ItemSO>();
-    public List<ItemBlockUI> itemBlocks = new List<ItemBlockUI>();
-
-    private void Awake()
+namespace InventorySystem
+{ 
+    public class Inventory : MonoBehaviour
     {
-        if(Instance == null) 
-        { 
-            Instance = this;
-        }
-        else
+        public static Inventory Instance;
+
+        public List<ItemSO> items = new List<ItemSO>();
+        public List<ItemBlockUI> itemBlocks = new List<ItemBlockUI>();
+
+        private void Awake()
         {
-            Destroy(this);
-        }
-    }
-
-    public void Start()
-    {
-        LoadUI();
-    }
-
-    public void AddItem(ItemSO item) 
-    {
-        if(items.Count <= 5 && item !=null)
-            items.Add(item);
-    }
-
-    public void RemoveItem(string itemID) 
-    {
-        if(items.Count ==0)
-            return;
-
-        foreach (ItemSO item in items) 
-        {
-            if (item.itemID == itemID) 
+            if(Instance == null) 
+            { 
+                Instance = this;
+            }
+            else
             {
-                items.Remove(item);
-                return;
+                Destroy(this);
             }
         }
-    }
 
-    public void LoadUI() 
-    {
-        for (int i = 0; i < items.Count; i++) 
+        public void Start()
         {
-            itemBlocks[i].SetIcon(items[i].itemIcon);
+            LoadUI();
+        }
+
+        public void AddItem(ItemSO item) 
+        {
+            if(items.Count <= 5 && item !=null)
+                items.Add(item);
+        }
+
+        public void RemoveItem(string itemID) 
+        {
+            if(items.Count ==0)
+                return;
+
+            foreach (ItemSO item in items) 
+            {
+                if (item.itemID == itemID) 
+                {
+                    items.Remove(item);
+                    return;
+                }
+            }
+        }
+
+        public void LoadUI() 
+        {
+            for (int i = 0; i < items.Count; i++) 
+            {
+                itemBlocks[i].SetIcon(items[i].itemIcon);
+            }
         }
     }
 }
