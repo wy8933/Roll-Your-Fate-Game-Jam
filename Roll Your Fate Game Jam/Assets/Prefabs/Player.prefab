@@ -1102,7 +1102,7 @@ MonoBehaviour:
   - {fileID: 5494196582150337289}
   - {fileID: 174441286687465477}
   - {fileID: 990008852625061121}
-  maxItemCount: 0
+  maxItemCount: 5
 --- !u!1 &8373284437745116052
 GameObject:
   m_ObjectHideFlags: 0
