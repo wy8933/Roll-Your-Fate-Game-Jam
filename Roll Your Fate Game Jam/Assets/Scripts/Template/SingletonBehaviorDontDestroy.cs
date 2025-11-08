@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Template
 {
-    public class SingletonBehavior<T> : MonoBehaviour where T : new()
+    public class SingletonBehaviorDontDestroy<T> : MonoBehaviour where T : new()
     {
         protected static T _instance;
 
@@ -13,6 +13,14 @@ namespace Template
         {
             get
             {
+                if (_instance == null)
+                {
+                    GameObject gameObject = new GameObject(typeof(T).Name);
+                    gameObject.AddComponent(typeof(T));
+                    if(Application.isPlaying)
+                        DontDestroyOnLoad(gameObject);
+                    _instance = gameObject.GetComponent<T>();
+                }
                 return _instance;
             }
         }
@@ -22,6 +30,7 @@ namespace Template
             // Debug.LogWarning("Awake");
             if (_instance == null)
             {
+                DontDestroyOnLoad(gameObject);
                 _instance = GetComponent<T>();
             }
             else

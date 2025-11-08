@@ -23,15 +23,16 @@ public class PlayerInteraction : MonoBehaviour
     private void Update()
     {
         _current = FindBestTarget();
-        if (_current != null)
-        {
-            _promptUI.gameObject.SetActive(true);
-            _promptUI.text = _current.Prompt;
-        }
-        else
-        {
-            _promptUI.gameObject.SetActive(false);
-        }
+        if (_promptUI != null)
+            if (_current != null)
+            {
+                _promptUI.gameObject.SetActive(true);
+                _promptUI.text = _current.Prompt;
+            }
+            else
+            {
+                _promptUI.gameObject.SetActive(false);
+            }
     }
 
     private void OnTriggerEnter(Collider other)
