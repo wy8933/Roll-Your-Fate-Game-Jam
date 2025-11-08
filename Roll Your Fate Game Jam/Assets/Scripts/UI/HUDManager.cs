@@ -4,8 +4,10 @@ using Control;
 using TMPro;
 
 namespace UI { 
-    public class InventoryUIController : MonoBehaviour
+    public class HUDManager : MonoBehaviour
     {
+        public static HUDManager Instance;
+
         [Header("References")]
         public Animator anim1;
         public Animator anim2;
@@ -13,6 +15,18 @@ namespace UI {
         public TMP_Text informationText;
 
         public bool isShowing = false;
+
+        public void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(this);
+            }
+        }
 
         public void OnEnable()
         {
