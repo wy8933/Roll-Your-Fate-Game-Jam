@@ -1,14 +1,13 @@
 using UnityEngine;
 using InventorySystem;
+using UI;
 
 public class Notes : MonoBehaviour, IInteractable
 {
     public Transform Transform => transform;
 
-    [SerializeField] private string _prompt = "Interact";
+    [SerializeField] private string _prompt = "Hello";
     public string Prompt => _prompt;
-
-    public ItemSO item;
 
     public bool CanInteract(GameObject player)
     {
@@ -17,13 +16,7 @@ public class Notes : MonoBehaviour, IInteractable
 
     public bool Interact()
     {
-        if (item == null)
-        {
-            return false;
-        }
-
-
-        Inventory.Instance.LoadUI();
+        HUDManager.Instance.SetText(_prompt);
         return true;
     }
 }
