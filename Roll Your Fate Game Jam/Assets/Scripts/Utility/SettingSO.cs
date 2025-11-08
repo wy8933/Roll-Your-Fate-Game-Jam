@@ -11,8 +11,9 @@ public class SettingSO : ScriptableObject
 [Serializable]
 public class UtilitySetting
 {
-    public float mouseSensitivity;
-    public float audioVolume;
+    // public float masterVolume;
+    // public float musicVolume;
+    // public float sfxVolume;
 }
 
 [Serializable]

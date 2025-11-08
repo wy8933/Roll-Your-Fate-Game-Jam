@@ -27,15 +27,10 @@ public class MainUIManager : MonoBehaviour
         creditPanel.SetActive(false);
     }
 
-    public void ChangeVolume(float value) 
-    {
-        settingSO.UtilitySetting.audioVolume = value;
-    }
-
-    public void ChangeSensitivity(float value)
-    {
-        settingSO.UtilitySetting.mouseSensitivity = value;
-    }
+    // public void ChangeSensitivity(float value)
+    // {
+    //     settingSO.UtilitySetting.mouseSensitivity = value;
+    // }
 
     public void StartGame()
     {

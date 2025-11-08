@@ -62,9 +62,16 @@ namespace InventorySystem
         /// </summary>
         public void LoadUI() 
         {
+            int current = items.Count;
+
             for (int i = 0; i < items.Count; i++) 
             {
                 itemBlocks[i].SetIcon(items[i].itemIcon);
+            }
+
+            for(int i = current; i < maxItemCount; i++) 
+            {
+                itemBlocks[i].SetIconAlphaZero();
             }
         }
     }
