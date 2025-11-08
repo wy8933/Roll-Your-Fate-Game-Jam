@@ -22,8 +22,8 @@ public class Pickupable : MonoBehaviour, IInteractable
             return false;
         }
         Inventory.Instance.AddItem(item);
-        Destroy(gameObject);
         Inventory.Instance.LoadUI();
+        Destroy(gameObject, 0.1f);
         return true;
     }
 }

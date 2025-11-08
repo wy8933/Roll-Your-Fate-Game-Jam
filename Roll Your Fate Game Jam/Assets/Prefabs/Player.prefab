@@ -173,12 +173,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e3367f7a97c8047a6b59fbafb767a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterTransform: {fileID: 778472226794162178}
   movementParam:
     maxAcceleration: 5
     maxSpeed: 5
     brakeFactor: 0.5
     rotateSpeed: 5
-  characterTransform: {fileID: 0}
 --- !u!114 &7051961794941646609
 MonoBehaviour:
   m_ObjectHideFlags: 0

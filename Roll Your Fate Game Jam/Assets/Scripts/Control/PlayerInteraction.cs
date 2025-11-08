@@ -65,8 +65,12 @@ namespace Control {
 
         public void OnInteract() 
         {
-            if(_current != null)
+            if (_current != null) 
+            {
                 _current.Interact();
+                _interactableInRange.Remove(_current);
+            }
+                
         }
 
         /// <summary>
