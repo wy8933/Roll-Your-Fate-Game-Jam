@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ResetAfterEveryRun: 1
-  firstSelectedButton: {fileID: 0}
+  firstSelectedButton: {fileID: 8380964458514051374}
   timer: 0
 --- !u!1 &6830647009392647558
 GameObject:

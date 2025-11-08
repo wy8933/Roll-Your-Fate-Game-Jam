@@ -28,17 +28,17 @@ namespace Minigame
         {
             gameObject.SetActive(true);
             PlayerInputHandler.Instance.SwitchTo(ActionMap.UI);
+            PlayerInputHandler.Instance.Navigate += OnNavigate;
+            PlayerInputHandler.Instance.Click += OnClick;
+            PlayerInputHandler.Instance.RightClick += OnRightClick;
             if(!isInitialized)
                 Initialize();
             EventSystem.current.SetSelectedGameObject(firstSelectedButton);
             status = Status.Progressing;
         }
 
-        void Initialize()
+        protected virtual void Initialize()
         {
-            PlayerInputHandler.Instance.Navigate += OnNavigate;
-            PlayerInputHandler.Instance.Click += OnClick;
-            PlayerInputHandler.Instance.RightClick += OnRightClick;
             isInitialized = true;
         }
         
