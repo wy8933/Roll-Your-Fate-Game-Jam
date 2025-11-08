@@ -11,6 +11,8 @@ public class Notes : MonoBehaviour, IInteractable
 
     public string text;
 
+    public float noteID;
+
     public bool CanInteract(GameObject player)
     {
         return true;
