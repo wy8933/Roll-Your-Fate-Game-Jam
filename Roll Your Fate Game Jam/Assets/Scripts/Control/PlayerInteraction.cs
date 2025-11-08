@@ -1,13 +1,12 @@
 using System.Collections.Generic;
 using Control;
-using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerInteraction : MonoBehaviour
 {
     private List<IInteractable> _interactableInRange = new List<IInteractable>();
     private IInteractable _current;
+
 
     private void OnEnable()
     {
@@ -63,11 +62,13 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
-
     public void OnInteract() 
     {
-        if(_current != null)
+        if (_current != null)
+        {
             _current.Interact();
+            _interactableInRange.Remove(_current);
+        }
     }
 
     private IInteractable FindBestTarget()
