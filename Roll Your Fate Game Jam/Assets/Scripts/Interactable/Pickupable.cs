@@ -1,16 +1,21 @@
 using UnityEngine;
 
-public class Pickupable : MonoBehaviour
+public class Pickupable : MonoBehaviour, IInteractable
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Transform Transform => gameObject.transform;
+
+    [SerializeField] private string _prompt = "Interact";
+    public string Prompt => _prompt;
+
+    public bool CanInteract(GameObject player)
     {
-        
+        return true;
     }
 
-    // Update is called once per frame
-    void Update()
+    public bool Interact()
     {
-        
+
+
+        return false;
     }
 }

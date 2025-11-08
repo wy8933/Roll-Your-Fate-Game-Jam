@@ -3,8 +3,15 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    public static Inventory Instance;
+
     public List<ItemSO> items = new List<ItemSO>();
     public List<ItemBlockUI> itemBlocks = new List<ItemBlockUI>();
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     public void Start()
     {
