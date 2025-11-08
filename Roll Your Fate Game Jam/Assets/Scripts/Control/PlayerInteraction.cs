@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace Control { 
@@ -68,9 +69,14 @@ namespace Control {
             if (_current != null) 
             {
                 _current.Interact();
-                _interactableInRange.Remove(_current);
+                //_interactableInRange.Remove(_current);
             }
                 
+        }
+
+        public void RemoveInteractable(IInteractable iteractable) 
+        {
+            _interactableInRange.Remove(iteractable);
         }
 
         /// <summary>

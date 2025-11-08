@@ -192,6 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bb52bde84e34c5aa1373b960012ef6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentActionMap: 0
 --- !u!114 &7948240496919842297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +207,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   setting: {fileID: 11400000, guid: 9dc3fd0f8e0019142bb866807e902366, type: 2}
   OxygenChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  NoMoreOxygen:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &331150159648193120
@@ -1814,7 +1818,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6785464886504442109}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 2
   m_Camera: {fileID: 0}
