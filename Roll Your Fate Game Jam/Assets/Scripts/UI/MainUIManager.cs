@@ -29,12 +29,12 @@ public class MainUIManager : MonoBehaviour
 
     public void ChangeVolume(float value) 
     {
-        settingSO.audioVolume = value;
+        settingSO.UtilitySetting.audioVolume = value;
     }
 
     public void ChangeSensitivity(float value)
     {
-        settingSO.mouseSensitivity = value;
+        settingSO.UtilitySetting.mouseSensitivity = value;
     }
 
     public void StartGame()

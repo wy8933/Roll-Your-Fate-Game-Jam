@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using Control;
+using Game;
 using TMPro;
 
 namespace UI { 
@@ -17,11 +18,13 @@ namespace UI {
         public void OnEnable()
         {
             PlayerInputHandler.Instance.ToggleHUD += ToggleHUDAnimation;
+            Player.Instance.OxygenChanged.AddListener(SetSliderValue);
         }
 
         public void OnDisable()
         {
             PlayerInputHandler.Instance.ToggleHUD -= ToggleHUDAnimation;
+            Player.Instance.OxygenChanged.RemoveListener(SetSliderValue);
         }
 
         [ContextMenu("Show UI")]

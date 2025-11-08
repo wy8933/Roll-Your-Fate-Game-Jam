@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 2519162474696933720}
   - component: {fileID: 2280985608169886764}
   - component: {fileID: 7051961794941646609}
+  - component: {fileID: 7948240496919842297}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -175,7 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterTransform: {fileID: 778472226794162178}
   movementParam:
-    maxAcceleration: 5
+    acceleration: 5
     maxSpeed: 5
     brakeFactor: 0.5
     rotateSpeed: 5
@@ -191,6 +192,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bb52bde84e34c5aa1373b960012ef6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7948240496919842297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164442299429969489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8049f1840c17464faeaed8f64bdd5697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setting: {fileID: 11400000, guid: 9dc3fd0f8e0019142bb866807e902366, type: 2}
+  OxygenChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &331150159648193120
 GameObject:
   m_ObjectHideFlags: 0

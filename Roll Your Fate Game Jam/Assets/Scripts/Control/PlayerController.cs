@@ -17,7 +17,7 @@ namespace Control
         #region Kinematic
         [SerializeField]
         private CharacterMovementParameter movementParam;
-        private float MaxAcceleration => movementParam.maxAcceleration;
+        private float Acceleration => movementParam.acceleration;
         private float MaxSpeed => movementParam.maxSpeed;
         private float BrakeFactor => movementParam.brakeFactor;
         private float RotateSpeed => movementParam.rotateSpeed;
@@ -57,7 +57,7 @@ namespace Control
             
             if (targetDirection.magnitude > eps)
             {
-                velocity = Vector3.ClampMagnitude(velocity + targetDirection * MaxAcceleration, MaxSpeed); 
+                velocity = Vector3.ClampMagnitude(velocity + targetDirection * Acceleration, MaxSpeed * PlayerInputHandler.Instance.InputVector.magnitude); 
             }
             else
             {
@@ -124,7 +124,7 @@ namespace Control
     [Serializable]
     public class CharacterMovementParameter
     {
-        public float maxAcceleration;
+        public float acceleration;
         public float maxSpeed;
         public float brakeFactor;
         public float rotateSpeed;
