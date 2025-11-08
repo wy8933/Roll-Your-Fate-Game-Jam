@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerInteraction : MonoBehaviour
 {
     private List<IInteractable> _interactableInRange = new List<IInteractable>();
-    [SerializeField] private GameObject _promptUI;
+    [SerializeField] private TMP_Text _promptUI;
     private IInteractable _current;
 
     [SerializeField] private InputActionReference interactAction;
@@ -28,12 +28,12 @@ public class PlayerInteraction : MonoBehaviour
         _current = FindBestTarget();
         if (_current != null)
         {
-            _promptUI.SetActive(true);
-            _promptUI.GetComponent<TextMeshPro>().text = _current.Prompt;
+            _promptUI.gameObject.SetActive(true);
+            _promptUI.text = _current.Prompt;
         }
         else
         {
-            _promptUI.SetActive(false);
+            _promptUI.gameObject.SetActive(false);
         }
     }
 
@@ -60,8 +60,9 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (other.TryGetComponent<IInteractable>(out var interactable))
         {
-            if (interactable != null && !_interactableInRange.Contains(interactable))
+            if (interactable != null && _interactableInRange.Contains(interactable))
             {
+
                 _interactableInRange.Remove(interactable);
             }
         }
@@ -83,6 +84,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private IInteractable FindBestTarget()
     {
+        Debug.Log(_interactableInRange.Count);
         if (_interactableInRange.Count == 0) return null;
 
         IInteractable best = null;
@@ -98,6 +100,7 @@ public class PlayerInteraction : MonoBehaviour
             float distance = (i.Transform.position - here).sqrMagnitude;
             if (distance < bestSqr) { bestSqr = distance; best = i; }
         }
+        Debug.Log("Best is " + best);
         return best;
     }
 }
