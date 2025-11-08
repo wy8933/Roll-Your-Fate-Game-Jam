@@ -13,6 +13,18 @@ MonoBehaviour:
   m_Name: CollectedStickyNoteSO
   m_EditorClassIdentifier: 
   collectedNote:
+  - ID: 0
+    Name: test0
+    Text: 
+  - ID: 2
+    Name: stest2
+    Text: 
+  - ID: 8
+    Name: stest8
+    Text: 
+  - ID: 14
+    Name: test 14
+    Text: 
   - ID: 1
     Name: Test 1
-    Text: 12312321
+    Text: this is a test
