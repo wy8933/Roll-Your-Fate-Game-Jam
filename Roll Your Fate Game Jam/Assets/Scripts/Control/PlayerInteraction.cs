@@ -9,12 +9,12 @@ public class PlayerInteraction : MonoBehaviour
     private List<IInteractable> _interactableInRange = new List<IInteractable>();
     private IInteractable _current;
 
-    private void OnEnable()
+    private void Start()
     {
         PlayerInputHandler.Instance.Interact += OnInteract;
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         PlayerInputHandler.Instance.Interact -= OnInteract;
     }

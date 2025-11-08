@@ -15,6 +15,7 @@ namespace Control
         private float MaxAcceleration => movementParam.maxAcceleration;
         private float MaxSpeed => movementParam.maxSpeed;
         private float BrakeFactor => movementParam.brakeFactor;
+        private float RotateSpeed => movementParam.rotateSpeed;
 
         private Vector3 velocity = Vector3.zero;
         #endregion
@@ -58,7 +59,7 @@ namespace Control
             }
             else
             {
-                velocity *= BrakeFactor * Time.fixedDeltaTime; // brake in a fixed length of time
+                velocity *= BrakeFactor; // brake in a fixed length of time
                 if (velocity.magnitude < eps)
                     velocity = Vector3.zero;
             }
@@ -71,7 +72,7 @@ namespace Control
                 newRotation = Quaternion.Lerp(
                     transform.rotation,
                     targetRotation,
-                    movementParam.rotateRate * Time.fixedDeltaTime); // smooth rotation
+                    RotateSpeed * Time.fixedDeltaTime); // smooth rotation
             }
             else
             {
@@ -129,7 +130,7 @@ namespace Control
         public float maxAcceleration;
         public float maxSpeed;
         public float brakeFactor;
-        public float rotateRate;
+        public float rotateSpeed;
         
     }
 }
