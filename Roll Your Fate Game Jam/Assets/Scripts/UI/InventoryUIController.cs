@@ -1,11 +1,16 @@
 using UnityEngine;
+using UnityEngine.UI;
+using Control;
+using TMPro;
 
-
-namespace Control { 
+namespace UI { 
     public class InventoryUIController : MonoBehaviour
     {
+        [Header("References")]
         public Animator anim1;
         public Animator anim2;
+        public Slider slider;
+        public TMP_Text informationText;
 
         public bool isShowing = false;
 
@@ -45,6 +50,25 @@ namespace Control {
             }
 
             isShowing = !isShowing;
+        }
+
+        public void SetSliderValue(float value)
+        {
+            if (slider == null)
+                return;
+
+            if (value > 1)
+                value = 1;
+
+            slider.value = value;
+        }
+
+        public void SetText(string text) 
+        {
+            if (informationText == null && text == null)
+                return;
+
+            informationText.text = text;
         }
     }
 }
