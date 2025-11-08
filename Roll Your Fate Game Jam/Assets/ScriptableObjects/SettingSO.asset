@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc603bc08908524f89045e028316f5e, type: 3}
   m_Name: SettingSO
   m_EditorClassIdentifier: 
-  mouseSensitivity: 0
-  audioVolume: 0
+  UtilitySetting:
+    mouseSensitivity: 0
+    audioVolume: 0
+  GameSetting:
+    initialOxygen: 60
+    oxygenConsumingRate: 1

@@ -21,9 +21,12 @@ public class Pickupable : MonoBehaviour, IInteractable
         {
             return false;
         }
-        Inventory.Instance.AddItem(item);
+
+        if (!Inventory.Instance.AddItem(item))
+            return false;
+        Debug.Log($"Picked: {item.itemID}");
         Inventory.Instance.LoadUI();
-        Destroy(gameObject, 0.1f);
+        gameObject.SetActive(false);
         return true;
     }
 }

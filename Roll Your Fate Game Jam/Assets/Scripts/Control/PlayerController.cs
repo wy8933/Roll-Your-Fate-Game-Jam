@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.Cinemachine;
 using UnityEngine;
 using Utility;
 
@@ -11,18 +12,24 @@ namespace Control
 
         #region Components
         [SerializeField] private Transform characterTransform;
+        [SerializeField] private CinemachineCamera playerCamera;
         private Rigidbody RB;
         #endregion
         
         #region Kinematic
         [SerializeField]
         private CharacterMovementParameter movementParam;
-        private float MaxAcceleration => movementParam.maxAcceleration;
+        private float Acceleration => movementParam.acceleration;
         private float MaxSpeed => movementParam.maxSpeed;
         private float BrakeFactor => movementParam.brakeFactor;
         private float RotateSpeed => movementParam.rotateSpeed;
 
         private Vector3 velocity = Vector3.zero;
+        #endregion
+        
+        #region Camera
+        [SerializeField] float Lookahead;
+        [SerializeField] float smooth;
         #endregion
 
 
@@ -57,7 +64,7 @@ namespace Control
             
             if (targetDirection.magnitude > eps)
             {
-                velocity = Vector3.ClampMagnitude(velocity + targetDirection * MaxAcceleration, MaxSpeed); 
+                velocity = Vector3.ClampMagnitude(velocity + targetDirection * Acceleration, MaxSpeed * PlayerInputHandler.Instance.InputVector.magnitude); 
             }
             else
             {
@@ -124,7 +131,7 @@ namespace Control
     [Serializable]
     public class CharacterMovementParameter
     {
-        public float maxAcceleration;
+        public float acceleration;
         public float maxSpeed;
         public float brakeFactor;
         public float rotateSpeed;

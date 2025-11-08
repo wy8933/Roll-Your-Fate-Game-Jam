@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
 using Control;
+using Game;
 using TMPro;
 
 namespace UI { 
-    public class InventoryUIController : MonoBehaviour
+    public class HUDManager : MonoBehaviour
     {
+        public static HUDManager Instance;
+
         [Header("References")]
         public Animator anim1;
         public Animator anim2;
@@ -13,15 +16,30 @@ namespace UI {
         public TMP_Text informationText;
 
         public bool isShowing = false;
+        public float timer;
+
+        public void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(this);
+            }
+        }
 
         public void OnEnable()
         {
             PlayerInputHandler.Instance.ToggleHUD += ToggleHUDAnimation;
+            Player.Instance.OxygenChanged.AddListener(SetSliderValue);
         }
 
         public void OnDisable()
         {
             PlayerInputHandler.Instance.ToggleHUD -= ToggleHUDAnimation;
+            Player.Instance.OxygenChanged.RemoveListener(SetSliderValue);
         }
 
         [ContextMenu("Show UI")]
@@ -29,6 +47,7 @@ namespace UI {
         {
             anim1.SetTrigger("ShowUI");
             anim2.SetTrigger("ShowUI");
+            timer = 0;
         }
 
         [ContextMenu("Hide UI")]
@@ -36,6 +55,7 @@ namespace UI {
         {
             anim1.SetTrigger("HideUI");
             anim2.SetTrigger("HideUI");
+            timer = 0;
         }
 
         public void ToggleHUDAnimation() 
