@@ -7,6 +7,8 @@ public class Pickupable : MonoBehaviour, IInteractable
     [SerializeField] private string _prompt = "Interact";
     public string Prompt => _prompt;
 
+    public ItemSO item;
+
     public bool CanInteract(GameObject player)
     {
         return true;
@@ -14,7 +16,7 @@ public class Pickupable : MonoBehaviour, IInteractable
 
     public bool Interact()
     {
-
+        Inventory.Instance.AddItem(item);
 
         return false;
     }
