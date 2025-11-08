@@ -73,6 +73,8 @@ MonoBehaviour:
   slider: {fileID: 7001627235757410441}
   informationText: {fileID: 2264466292598808053}
   isShowing: 0
+  turnVisible: 1
+  timer: 0
 --- !u!1 &164442299429969489
 GameObject:
   m_ObjectHideFlags: 0
@@ -1547,6 +1549,7 @@ GameObject:
   - component: {fileID: 2680444160561968868}
   - component: {fileID: 2415444015689676092}
   - component: {fileID: 5857376063432650597}
+  - component: {fileID: 9215294723654749895}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -1614,6 +1617,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &9215294723654749895
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6258657915008200724}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &6269759473852958190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1909,14 +1924,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6785464886504442109}
-  m_LocalRotation: {x: 0.21943459, y: -0, z: -0, w: 0.97562724}
+  m_LocalRotation: {x: 0.5519369, y: 0, z: 0, w: 0.83388585}
   m_LocalPosition: {x: 0, y: 0, z: -23.131634}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2680444160561968868}
   m_Father: {fileID: 1862899618278146327}
-  m_LocalEulerAnglesHint: {x: 25.352, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 67, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 1.1928935, y: 22.567026}

@@ -17,6 +17,9 @@ namespace UI {
 
         public bool isShowing = false;
 
+        public bool turnVisible = true;
+        public float timer;
+
         public void Awake()
         {
             if (Instance == null)
@@ -41,11 +44,29 @@ namespace UI {
             Player.Instance.OxygenChanged.RemoveListener(SetSliderValue);
         }
 
+        public void Update()
+        {
+            if (turnVisible)
+            {
+                var images = gameObject.GetComponentsInChildren<Image>();
+
+                foreach (Image image in images) 
+                {
+                    
+                }
+            }
+            else 
+            {
+                
+            }
+        }
+
         [ContextMenu("Show UI")]
         public void PlayShowUIAnimation() 
         {
             anim1.SetTrigger("ShowUI");
             anim2.SetTrigger("ShowUI");
+            timer = 0;
         }
 
         [ContextMenu("Hide UI")]
@@ -53,6 +74,7 @@ namespace UI {
         {
             anim1.SetTrigger("HideUI");
             anim2.SetTrigger("HideUI");
+            timer = 0;
         }
 
         public void ToggleHUDAnimation() 
