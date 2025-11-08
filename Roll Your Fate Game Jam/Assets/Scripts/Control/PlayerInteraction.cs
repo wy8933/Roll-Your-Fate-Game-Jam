@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 
@@ -7,6 +8,10 @@ namespace Control {
     {
         private List<IInteractable> _interactableInRange = new List<IInteractable>();
         private IInteractable _current;
+
+        [SerializeField] private TMP_Text _promptUI;
+
+        public Vector3 canvasOffset = Vector3.zero;
 
         private void OnEnable()
         {
@@ -21,6 +26,16 @@ namespace Control {
         private void Update()
         {
             _current = FindBestTarget();
+            if (_current != null)
+            {
+                _promptUI.gameObject.SetActive(true);
+                _promptUI.gameObject.transform.parent.gameObject.transform.position = _current.Transform.position + canvasOffset;
+                _promptUI.text = _current.Prompt;
+            }
+            else
+            {
+                _promptUI.gameObject.SetActive(false);
+            }
         }
 
         private void OnTriggerEnter(Collider other)
@@ -69,7 +84,6 @@ namespace Control {
             if (_current != null) 
             {
                 _current.Interact();
-                //_interactableInRange.Remove(_current);
             }
                 
         }

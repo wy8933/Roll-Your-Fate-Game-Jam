@@ -9,6 +9,8 @@ public class Notes : MonoBehaviour, IInteractable
     [SerializeField] private string _prompt = "Hello";
     public string Prompt => _prompt;
 
+    public string text;
+
     public bool CanInteract(GameObject player)
     {
         return true;
@@ -16,7 +18,7 @@ public class Notes : MonoBehaviour, IInteractable
 
     public bool Interact()
     {
-        HUDManager.Instance.SetText(_prompt);
+        HUDManager.Instance.SetText(text);
         return true;
     }
 }

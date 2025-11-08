@@ -16,6 +16,7 @@ namespace UI {
         public TMP_Text informationText;
 
         public bool isShowing = false;
+        public float timer;
 
         public void Awake()
         {
@@ -46,6 +47,7 @@ namespace UI {
         {
             anim1.SetTrigger("ShowUI");
             anim2.SetTrigger("ShowUI");
+            timer = 0;
         }
 
         [ContextMenu("Hide UI")]
@@ -53,6 +55,7 @@ namespace UI {
         {
             anim1.SetTrigger("HideUI");
             anim2.SetTrigger("HideUI");
+            timer = 0;
         }
 
         public void ToggleHUDAnimation() 
