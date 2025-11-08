@@ -7,7 +7,6 @@ using UnityEngine.InputSystem;
 public class PlayerInteraction : MonoBehaviour
 {
     private List<IInteractable> _interactableInRange = new List<IInteractable>();
-    [SerializeField] private TMP_Text _promptUI;
     private IInteractable _current;
 
     private void OnEnable()
@@ -23,16 +22,6 @@ public class PlayerInteraction : MonoBehaviour
     private void Update()
     {
         _current = FindBestTarget();
-        if (_promptUI != null)
-            if (_current != null)
-            {
-                _promptUI.gameObject.SetActive(true);
-                _promptUI.text = _current.Prompt;
-            }
-            else
-            {
-                _promptUI.gameObject.SetActive(false);
-            }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -77,8 +66,6 @@ public class PlayerInteraction : MonoBehaviour
 
     public void OnInteract() 
     {
-        Debug.Log("Interact successful");
-
         if(_current != null)
             _current.Interact();
     }
