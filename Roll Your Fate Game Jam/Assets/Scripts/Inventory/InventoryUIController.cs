@@ -2,13 +2,20 @@ using UnityEngine;
 
 public class InventoryUIController : MonoBehaviour
 {
-    public Animation anim1;
-    public Animation anim2;
+    public Animator anim1;
+    public Animator anim2;
 
-    [ContextMenu("Play Animation")]
-    public void PlayAnimation() 
+    [ContextMenu("Show UI")]
+    public void PlayShowUIAnimation() 
     {
-        anim1.Play();
-        anim2.Play();
+        anim1.SetTrigger("ShowUI");
+        anim2.SetTrigger("ShowUI");
+    }
+
+    [ContextMenu("Hide UI")]
+    public void PlayHideUIAnimation()
+    {
+        anim1.SetTrigger("HideUI");
+        anim2.SetTrigger("HideUI");
     }
 }
