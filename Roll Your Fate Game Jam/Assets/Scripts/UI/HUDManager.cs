@@ -16,8 +16,6 @@ namespace UI {
         public TMP_Text informationText;
 
         public bool isShowing = false;
-
-        public bool turnVisible = true;
         public float timer;
 
         public void Awake()
@@ -42,23 +40,6 @@ namespace UI {
         {
             PlayerInputHandler.Instance.ToggleHUD -= ToggleHUDAnimation;
             Player.Instance.OxygenChanged.RemoveListener(SetSliderValue);
-        }
-
-        public void Update()
-        {
-            if (turnVisible)
-            {
-                var images = gameObject.GetComponentsInChildren<Image>();
-
-                foreach (Image image in images) 
-                {
-                    
-                }
-            }
-            else 
-            {
-                
-            }
         }
 
         [ContextMenu("Show UI")]
