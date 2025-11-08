@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.Cinemachine;
 using UnityEngine;
 using Utility;
 
@@ -11,6 +12,7 @@ namespace Control
 
         #region Components
         [SerializeField] private Transform characterTransform;
+        [SerializeField] private CinemachineCamera playerCamera;
         private Rigidbody RB;
         #endregion
         
@@ -23,6 +25,11 @@ namespace Control
         private float RotateSpeed => movementParam.rotateSpeed;
 
         private Vector3 velocity = Vector3.zero;
+        #endregion
+        
+        #region Camera
+        [SerializeField] float Lookahead;
+        [SerializeField] float smooth;
         #endregion
 
 
