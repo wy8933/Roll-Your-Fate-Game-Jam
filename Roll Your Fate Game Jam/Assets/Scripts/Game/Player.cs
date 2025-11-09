@@ -48,5 +48,7 @@ namespace Game
                 OxygenChanged?.Invoke(OxygenPercentage);
             }
         }
+        
+        
     }
 }
