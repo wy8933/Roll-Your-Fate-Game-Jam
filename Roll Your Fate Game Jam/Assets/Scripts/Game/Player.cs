@@ -10,17 +10,19 @@ namespace Game
         [SerializeField] SettingSO setting;
         
         private float curOxygen;
-        private float maxOxygen;
-        public float OxygenPercentage => curOxygen / maxOxygen;
+        public float MaxOxygen;
+        public float OxygenPercentage => curOxygen / MaxOxygen;
         
         [HideInInspector]
         public UnityEvent<float> OxygenChanged = new UnityEvent<float>();
         [HideInInspector]
-        public UnityEvent NoMoreOxygen = new UnityEvent();
+        public UnityEvent NoOxygen = new UnityEvent();
+
+        public bool isConsumingOxygen = false;
 
         private void Start()
         {
-            curOxygen = maxOxygen = setting.GameSetting.initialOxygen;
+            curOxygen = MaxOxygen = setting.GameSetting.initialOxygen;
         }
 
         private void OnDisable()
@@ -30,9 +32,9 @@ namespace Game
 
         public void RechargeOxygen()
         {
-            curOxygen = maxOxygen;
+            curOxygen = MaxOxygen;
         }
-            
+        
         void Update()
         {
             
@@ -40,8 +42,11 @@ namespace Game
 
         void FixedUpdate()
         {
-            curOxygen -= setting.GameSetting.oxygenConsumingRate * Time.deltaTime;
-            OxygenChanged?.Invoke(OxygenPercentage);
+            if (isConsumingOxygen)
+            {
+                curOxygen -= setting.GameSetting.oxygenConsumingRate * Time.deltaTime;
+                OxygenChanged?.Invoke(OxygenPercentage);
+            }
         }
     }
 }

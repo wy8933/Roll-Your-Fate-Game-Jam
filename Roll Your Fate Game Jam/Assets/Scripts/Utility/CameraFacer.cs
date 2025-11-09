@@ -7,7 +7,7 @@ namespace Utils
         Camera camera;
         void Start()
         {
-            camera = FindFirstObjectByType<Camera>();
+            camera = Camera.main;
         }
 
         void Update()
