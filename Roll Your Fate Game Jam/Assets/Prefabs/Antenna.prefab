@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2169660101637502883}
   - component: {fileID: 2105237991716251244}
   - component: {fileID: 6410550863177573209}
+  - component: {fileID: 6435622047288886029}
   m_Layer: 0
   m_Name: Antenna
   m_TagString: Untagged
@@ -121,14 +122,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c22f7c760d1f7b4380aa146ad9953d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prompt: 
-  minigamePrefab: {fileID: 7585890979435992330, guid: 377b2f3face2dbe43a5f08005fd0ad9c, type: 3}
-  MinigameCleared:
-    m_PersistentCalls:
-      m_Calls: []
-  showedPrompt: Fix Antenna
+  _prompt: Fix Antenna
   isFixed: 0
   neededItemList:
   - 1
   - 2
   - 4
+  minigame: {fileID: 6435622047288886029}
+--- !u!114 &6435622047288886029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8473340398114915398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b55b3aeb6294b4fa1a609f265bda5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prompt: Interact
+  minigamePrefab: {fileID: 7585890979435992330, guid: 377b2f3face2dbe43a5f08005fd0ad9c, type: 3}
+  MinigameCleared:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6410550863177573209}
+        m_TargetAssemblyTypeName: Interactable.Atenna, Assembly-CSharp
+        m_MethodName: SetFixedTrue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

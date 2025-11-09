@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 10086
   itemName: Oxygen
-  itemIcon: {fileID: 21300000, guid: 4f90e0aa69eda794f923405880649359, type: 3}
+  itemIcon: {fileID: 21300000, guid: fba3979cefbe83c4896bef05e7d1c519, type: 3}
