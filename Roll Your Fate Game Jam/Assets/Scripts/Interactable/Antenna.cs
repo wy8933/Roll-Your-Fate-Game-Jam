@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using InventorySystem;
 
-namespace Interactable { 
+namespace Interactable {
     public class Atenna : MonoBehaviour, IInteractable
     {
         public Transform Transform => transform;
@@ -17,15 +17,16 @@ namespace Interactable {
 
         public string[] neededItemList = new string[3];
 
+        public MinigameLauncher minigame;
 
         public bool CanInteract(GameObject player)
         {
-            if (isFixed) 
+            if (isFixed)
             {
                 return false;
             }
 
-            foreach (string itemID in neededItemList) 
+            foreach (string itemID in neededItemList)
             {
                 if (!Inventory.Instance.ContainItem(itemID))
                 {
@@ -47,14 +48,21 @@ namespace Interactable {
                 {
                     Inventory.Instance.RemoveItem(itemID);
                 }
-                else 
+                else
                 {
                     return false;
                 }
             }
 
-            isFixed = true;
+            minigame.Interact();
+
             return true;
+        }
+
+        public void SetFixedTrue() 
+        {
+            Debug.Log("it is now fixed");
+            isFixed = true;
         }
     }
 }

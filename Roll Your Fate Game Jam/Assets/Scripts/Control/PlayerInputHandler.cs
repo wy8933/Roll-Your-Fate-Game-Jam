@@ -19,6 +19,7 @@ namespace Control
         #region ActionMap.UI
         public Action<Vector2> Navigate;
         public Action<Vector2> Look;
+        public Action<Vector2> Point;
         public Action Click;
         public Action RightClick;
         #endregion
@@ -29,22 +30,23 @@ namespace Control
             inputAction = new InputSystem_Actions();
         }
 
-        void Start()
+        void OnEnable()
         {
             inputAction.Player.Interact.performed += OnInteractPressed;
             inputAction.Player.ToggleHUD.performed += OnToggleHUDPressed;
             inputAction.UI.Navigate.performed += OnNavigate;
             inputAction.UI.Look.performed += OnLook;
+            inputAction.UI.Point.performed += OnPoint;
             inputAction.UI.Click.performed += OnUIClick;
             inputAction.UI.RightClick.performed += OnUIRightClick;
-            currentActionMap = ActionMap.Player;
         }
 
-        void OnDestroy()
+        void OnDisable()
         {
             inputAction.Player.Interact.performed -= OnInteractPressed;
             inputAction.Player.ToggleHUD.performed -= OnToggleHUDPressed;
             inputAction.UI.Navigate.performed -= OnNavigate;
+            inputAction.UI.Point.performed -= OnPoint;
             inputAction.UI.Click.performed -= OnUIClick;
             inputAction.UI.RightClick.performed -= OnUIRightClick;
         }
@@ -97,6 +99,12 @@ namespace Control
         {
             Vector2 value = ctx.ReadValue<Vector2>();
             Navigate?.Invoke(value);
+        }
+        
+        protected void OnPoint(InputAction.CallbackContext ctx)
+        {
+            Vector2 value = ctx.ReadValue<Vector2>();
+            Point?.Invoke(value);
         }
         
         protected void OnLook(InputAction.CallbackContext ctx)
