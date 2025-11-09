@@ -15,6 +15,7 @@ public class MainUIManager : MonoBehaviour
     public GameObject creditFirstButton;
 
     public GameObject mainMenuButtons;
+    public GameObject title;
 
     public void OpenSetting()
     {
@@ -63,7 +64,8 @@ public class MainUIManager : MonoBehaviour
         GetComponent<PlayerInputHandler>().SwitchTo(ActionMap.Player);
         VideoManager.Instance.PlayStartClip();
         AudioManager.Instance.StopMusic();
-        mainMenuButtons.SetActive(true);
+        mainMenuButtons.SetActive(false);
+        title.SetActive(false);
         StartCoroutine(LoadMain());
     }
 
