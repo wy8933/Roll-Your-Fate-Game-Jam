@@ -87,11 +87,11 @@ namespace InventorySystem
             return false;
         }
 
-        public bool ContainItem(ItemSO item) 
+        public bool ContainItem(string itemID) 
         {
             foreach (ItemSO i in items) 
             {
-                if (i.itemID == item.itemID) 
+                if (i.itemID == itemID) 
                 {
                     return true;
                 }
