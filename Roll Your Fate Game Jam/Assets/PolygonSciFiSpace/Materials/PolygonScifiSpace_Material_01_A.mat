@@ -188,7 +188,7 @@ Material:
     - _QueueOffset: 0
     - _RampDiffuseTextureLoaded: 1
     - _ReceiveShadows: 1
-    - _RimPower: 2
+    - _RimPower: 2.5
     - _RimSmoothness: 0
     - _RimSplitColor: 0
     - _RimThickness: 0.75
