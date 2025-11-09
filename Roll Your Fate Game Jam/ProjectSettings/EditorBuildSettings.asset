@@ -8,9 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: fcd7cfe0d14d73545ad1585c31c6b637
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Weijie_Test.unity
-    guid: 1ffa3f5133ca20d4e9f0ca1de141d360
+    guid: 11c3b72d41cebb84fafc849049857deb
+  - enabled: 1
+    path: Assets/Scenes/Lunar Scene_1.0.unity
+    guid: 82c65a2f68a264c4d85e9d234a0c1c2d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
