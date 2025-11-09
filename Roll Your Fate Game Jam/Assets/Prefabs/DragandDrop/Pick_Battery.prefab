@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6832329859503406597}
   m_Layer: 0
   m_Name: Pick_Battery
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
