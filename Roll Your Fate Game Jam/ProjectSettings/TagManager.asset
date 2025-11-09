@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Minigame Canvas
   - Interactable
-  - Log
   layers:
   - Default
   - TransparentFX
