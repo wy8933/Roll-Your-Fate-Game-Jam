@@ -13,12 +13,12 @@ public class ReturnOxygen : MonoBehaviour, IInteractable
 
     public bool CanInteract(GameObject player)
     {
-        return Inventory.Instance.ContainItem(OxygenItem);
+        return Inventory.Instance.ContainItem(OxygenItem.itemID);
     }
 
     public bool Interact()
     {
-        if (!Inventory.Instance.ContainItem(OxygenItem)) 
+        if (!Inventory.Instance.ContainItem(OxygenItem.itemID)) 
         {
             return false;
         }
