@@ -1,4 +1,6 @@
+using Control;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class MainUIManager : MonoBehaviour
@@ -7,28 +9,42 @@ public class MainUIManager : MonoBehaviour
     public GameObject settingPanel;
     public GameObject creditPanel;
 
+    public GameObject mainMenuFirstButton;
+    public GameObject settingFirstButton;
+    public GameObject creditFirstButton;
+
+    public GameObject mainMenuButtons;
+
     public void OpenSetting()
     {
         settingPanel.SetActive(true);
         AudioManager.Instance.Click();
+        mainMenuButtons.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(settingFirstButton);
     }
 
     public void CloseSetting()
     {
         settingPanel.SetActive(false);
         AudioManager.Instance.Click();
+        mainMenuButtons.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(mainMenuFirstButton);
     }
 
     public void OpenCredit()
     {
         creditPanel.SetActive(true);
         AudioManager.Instance.Click();
+        mainMenuButtons.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(creditFirstButton);
     }
 
     public void CloseCredit() 
     {
         creditPanel.SetActive(false);
         AudioManager.Instance.Click();
+        mainMenuButtons.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(mainMenuFirstButton);
     }
 
     // public void ChangeSensitivity(float value)
@@ -38,6 +54,8 @@ public class MainUIManager : MonoBehaviour
 
     public void StartGame()
     {
+        GetComponent<PlayerInputHandler>().SwitchTo(ActionMap.Player);
+        Destroy(gameObject);
         SceneManager.LoadScene(1);
     }
 
