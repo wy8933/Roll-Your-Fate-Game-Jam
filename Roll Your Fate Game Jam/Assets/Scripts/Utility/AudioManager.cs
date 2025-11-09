@@ -50,10 +50,23 @@ public class AudioManager : MonoBehaviour
         sfxSource.PlayOneShot(clip);
     }
 
-    public void Click() { PlaySFX(sfx.OnClick); }
-    public void Failed() { PlaySFX(sfx.OnFailed); }
-    public void Interact2() { PlaySFX(sfx.OnInteract2); }
-    public void Interact() { PlaySFX(sfx.OnInteract); }
-    public void Select() { PlaySFX(sfx.OnSelect); }
-    public void Success() { PlaySFX(sfx.OnSuccess); }
+    public void Click() 
+    { 
+        PlaySFX(sfx.OnClick); 
+    }
+    public void Failed() { 
+        PlaySFX(sfx.OnFailed); 
+    }
+    public void Interact2() { 
+        PlaySFX(sfx.OnInteract2); 
+    }
+    public void Interact() { 
+        PlaySFX(sfx.OnInteract); 
+    }
+    public void Select() {
+        PlaySFX(sfx.OnSelect); 
+    }
+    public void Success() {
+        PlaySFX(sfx.OnSuccess); 
+    }
 }
