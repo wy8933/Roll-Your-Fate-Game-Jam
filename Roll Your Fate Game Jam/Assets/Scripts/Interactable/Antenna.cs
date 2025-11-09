@@ -9,13 +9,14 @@ namespace Interactable {
 
         [SerializeField] private string _prompt;
 
-        public string Prompt => _prompt;
+        private string showedPrompt;
+
+        public string Prompt => showedPrompt;
 
         public bool isFixed = false;
 
         public string[] neededItemList = new string[3];
 
-        public GameObject _promptUI;
 
         public bool CanInteract(GameObject player)
         {
@@ -26,22 +27,15 @@ namespace Interactable {
 
             foreach (string itemID in neededItemList) 
             {
-                if (!Inventory.Instance.ContainItem(itemID)) 
+                if (!Inventory.Instance.ContainItem(itemID))
                 {
-                    if (_promptUI != null)
-                    {
-                        _promptUI.gameObject.SetActive(true);
-                        _promptUI.gameObject.transform.position = transform.position + new Vector3(0,2,0);
-                    }
-                    else
-                    {
-                        _promptUI.gameObject.SetActive(false);
-                    }
+                    showedPrompt = "You will need 1 Atenna, 1 Chip and 1 Battery";
 
-                    return false;
+                    return true;
                 }
             }
 
+            showedPrompt = _prompt;
             return true;
         }
 
