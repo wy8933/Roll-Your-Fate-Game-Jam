@@ -745,6 +745,7 @@ GameObject:
   - component: {fileID: 458625022}
   - component: {fileID: 458625021}
   - component: {fileID: 458625020}
+  - component: {fileID: 458625023}
   m_Layer: 5
   m_Name: Credit Button
   m_TagString: Untagged
@@ -866,6 +867,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 458625018}
   m_CullTransparentMesh: 1
+--- !u!114 &458625023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458625018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca4b7480aa137de4281ae87cb7d51401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &530585285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1511,6 +1524,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612547720}
   m_CullTransparentMesh: 1
+--- !u!1001 &626948419
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1597078141351685140, guid: b14f069e37b7ae84bb5280c5c5594586, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4687787152436744786, guid: b14f069e37b7ae84bb5280c5c5594586, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 187.96992
+      objectReference: {fileID: 0}
+    - target: {fileID: 4687787152436744786, guid: b14f069e37b7ae84bb5280c5c5594586, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 282.56818
+      objectReference: {fileID: 0}
+    - target: {fileID: 4687787152436744786, guid: b14f069e37b7ae84bb5280c5c5594586, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -130.62581
+      objectReference: {fileID: 0}
+    - target: {fileID: 4687787152436744786, guid: b14f069e37b7ae84bb5280c5c5594586, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4687787152436744786, guid: b14f069e37b7ae84bb5280c5c5594586, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4687787152436744786, guid: b14f069e37b7ae84bb5280c5c5594586, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4687787152436744786, guid: b14f069e37b7ae84bb5280c5c5594586, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4687787152436744786, guid: b14f069e37b7ae84bb5280c5c5594586, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4687787152436744786, guid: b14f069e37b7ae84bb5280c5c5594586, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4687787152436744786, guid: b14f069e37b7ae84bb5280c5c5594586, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b14f069e37b7ae84bb5280c5c5594586, type: 3}
 --- !u!1 &639311019
 GameObject:
   m_ObjectHideFlags: 0
@@ -1964,6 +2034,7 @@ GameObject:
   - component: {fileID: 693863887}
   - component: {fileID: 693863886}
   - component: {fileID: 693863885}
+  - component: {fileID: 693863888}
   m_Layer: 5
   m_Name: Setting Button
   m_TagString: Untagged
@@ -2085,6 +2156,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 693863883}
   m_CullTransparentMesh: 1
+--- !u!114 &693863888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693863883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca4b7480aa137de4281ae87cb7d51401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &714557891
 GameObject:
   m_ObjectHideFlags: 0
@@ -3630,7 +3713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1346515416}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1339002106
@@ -3660,6 +3743,7 @@ GameObject:
   - component: {fileID: 1346515420}
   - component: {fileID: 1346515419}
   - component: {fileID: 1346515418}
+  - component: {fileID: 1346515421}
   m_Layer: 5
   m_Name: Start Button
   m_TagString: Untagged
@@ -3781,6 +3865,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1346515416}
   m_CullTransparentMesh: 1
+--- !u!114 &1346515421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346515416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca4b7480aa137de4281ae87cb7d51401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1380550949
 GameObject:
   m_ObjectHideFlags: 0
@@ -5837,6 +5933,7 @@ GameObject:
   - component: {fileID: 2039749733}
   - component: {fileID: 2039749732}
   - component: {fileID: 2039749731}
+  - component: {fileID: 2039749734}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -5958,6 +6055,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2039749729}
   m_CullTransparentMesh: 1
+--- !u!114 &2039749734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039749729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca4b7480aa137de4281ae87cb7d51401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2093073294
 GameObject:
   m_ObjectHideFlags: 0
@@ -6120,3 +6229,4 @@ SceneRoots:
   - {fileID: 1438962098}
   - {fileID: 578581573}
   - {fileID: 1339002106}
+  - {fileID: 626948419}
