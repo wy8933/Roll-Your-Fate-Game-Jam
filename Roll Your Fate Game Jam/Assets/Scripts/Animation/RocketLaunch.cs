@@ -1,8 +1,12 @@
 using UnityEngine;
 
-public class RocketLaunch : MonoBehaviour
+/// <summary>
+/// 让物体沿路径点依次移动的脚本。
+/// 可设置循环或往返移动。
+/// </summary>
+public class PathMover : MonoBehaviour
 {
-   public Transform[] waypoints;      // 路径点（至少 2 个）
+    public Transform[] waypoints;      // 路径点（至少 2 个）
     public float speed = 3f;           // 移动速度（单位/s）
     public bool loop = true;           // 到最后一个点后回到第一个点（循环）
     public bool pingPong = false;      // 往返（与 loop 互斥；若同时为 true，以 pingPong 为准）
@@ -128,5 +132,5 @@ public class RocketLaunch : MonoBehaviour
                 Gizmos.DrawLine(waypoints[i].position, waypoints[0].position);
             }
         }
-    } 
+    }
 }
