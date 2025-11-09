@@ -62,6 +62,7 @@ namespace Interactable {
         public void SetFixedTrue() 
         {
             Debug.Log("it is now fixed");
+            MissionManager.Instance.FixAntenna();
             isFixed = true;
         }
     }
