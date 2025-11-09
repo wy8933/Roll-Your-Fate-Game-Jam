@@ -12,15 +12,18 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - _OUTLINETYPE_NORMAL
   - _OVERLAYMODE1_NONE
   - _OVERLAYMODE_NONE
+  - _RIMSPLITCOLOR_MULTIPLYWITHDIFFUSE
+  - _USEADDITIONALLIGHTSDIFFUSE_ON
   - _USEHATCHINGCONSTANTSCALE_ON
   - _USELIGHTRAMP_POSTERIZE
-  - _USESPECULAR_ON
-  m_InvalidKeywords:
-  - _USEADDITIONALLIGHTSDIFFUSE_ON
   - _USEOUTLINE_ON
   - _USEPURESKETCH_ON
+  - _USESPECULAR_ON
+  m_InvalidKeywords:
+  - _USESHADOWS_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -178,6 +181,7 @@ Material:
     - _OverlayUVTilling: 0
     - _PaperTilling: 1
     - _Parallax: 0.005
+    - _QueueControl: -1
     - _QueueOffset: 0
     - _RampDiffuseTextureLoaded: 1
     - _ReceiveShadows: 1
@@ -254,6 +258,7 @@ Material:
     - _ShadowColor: {r: 0.72285557, g: 0, b: 1, a: 0}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!114 &3699213212061745543
 MonoBehaviour:
   m_ObjectHideFlags: 11

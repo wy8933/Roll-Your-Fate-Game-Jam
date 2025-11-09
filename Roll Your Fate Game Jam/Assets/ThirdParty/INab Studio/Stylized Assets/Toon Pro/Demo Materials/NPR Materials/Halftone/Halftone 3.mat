@@ -2,23 +2,40 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Halftone 3
   m_Shader: {fileID: 4800000, guid: 60e29b7951f20da47b11861d166b7036, type: 3}
-  m_ShaderKeywords: _INVERSEMASK_ON _OUTLINETYPE_NORMAL _OVERLAYMODE_HAFTONE _OVERLAYMODE_HALFTONE
-    _RIMSPLITCOLOR_NOSPLIT _STEPHALFTONETEXTURE_ON _USELIGHTRAMPON _USELIGHTRAMP_DIFFUSERAMP
-    _USEOUTLINE_ON _USEPURESKETCH_ON _USESCREENUVSSPECULAR_ON _USESCREENUVS_ON _USESPECULARMASK_ON
-    _USESPECULAR_ON
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _INVERSEMASK_ON
+  - _OUTLINETYPE_NORMAL
+  - _OVERLAYMODE1_NONE
+  - _OVERLAYMODE_HAFTONE
+  - _RIMSPLITCOLOR_NOSPLIT
+  - _USELIGHTRAMP_DIFFUSERAMP
+  - _USEOUTLINE_ON
+  - _USEPURESKETCH_ON
+  - _USESCREENUVSSPECULAR_ON
+  - _USESCREENUVS_ON
+  - _USESPECULAR_ON
+  m_InvalidKeywords:
+  - _OVERLAYMODE_HALFTONE
+  - _STEPHALFTONETEXTURE_ON
+  - _USELIGHTRAMPON
+  - _USESHADOWS_ON
+  - _USESPECULARMASK_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -94,6 +111,19 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _AdaptiveThicnkess: 0
     - _AdditionalLightsAmount: 0
@@ -155,6 +185,7 @@ Material:
     - _PrimaryIntensity: 1
     - _PrimaryPower: 0.46
     - _PrimarySmoothness: 0.5
+    - _QueueControl: -1
     - _QueueOffset: 0
     - _RampDiffuseTextureLoaded: 0
     - _ReceiveShadows: 1
@@ -243,6 +274,7 @@ Material:
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!114 &8211425756804703187
 MonoBehaviour:
   m_ObjectHideFlags: 11
