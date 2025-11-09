@@ -31,6 +31,11 @@ namespace Game
         {
             curOxygen = MaxOxygen = oxygen;
         }
+
+        public void RechargeOxygen()
+        {
+            curOxygen = MaxOxygen;
+        }
         
         void Update()
         {
@@ -47,7 +52,7 @@ namespace Game
 
             if (curOxygen <= 0)
             {
-                GameManager.Instance.RunOutOxygen();
+                GameManager.Instance.SendBackHome();
             }
         }
         

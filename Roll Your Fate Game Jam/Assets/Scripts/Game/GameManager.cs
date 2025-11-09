@@ -30,15 +30,13 @@ namespace Game
             Player.Instance.isConsumingOxygen = true;
         }
 
-        public void BackHome()
+        public void SendBackHome()
         {
+            
+            Player.Instance.transform.SetPositionAndRotation(respawnPoint.position, respawnPoint.rotation);
             AudioManager.Instance.PlayMusic(BasementMusic[Random.Range(0, BasementMusic.Count)]);
             Player.Instance.isConsumingOxygen = false;
-        }
-
-        public void RunOutOxygen()
-        {
-            Player.Instance.transform.SetPositionAndRotation(respawnPoint.position, respawnPoint.rotation);
+            Player.Instance.RechargeOxygen();
         }
     }
 }
