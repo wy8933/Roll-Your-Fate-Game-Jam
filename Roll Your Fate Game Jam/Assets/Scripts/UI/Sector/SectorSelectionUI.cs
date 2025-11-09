@@ -57,11 +57,17 @@ namespace UI.Sector
 
         private void OnClick()
         {
+            Debug.Log(targetSectorID);
             if (targetSectorID != -1 && sectors[targetSectorID].isOpened)
             {
                 gameObject.SetActive(false);
                 GameManager.Instance.SetOff(targetSectorID);
             }
+        }
+
+        private void OnRightClick()
+        {
+            gameObject.SetActive(false);
         }
     }
 }

@@ -43,7 +43,7 @@ namespace Control
         private void Awake()
         {
             RB = GetComponent<Rigidbody>();
-            animator = GetComponentInChildren<Animator>();
+            animator = transform.Find("Character").GetComponentInChildren<Animator>();
         }
 
         private void Start()
