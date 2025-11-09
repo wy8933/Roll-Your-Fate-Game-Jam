@@ -33,7 +33,6 @@ namespace Control
         #endregion
 
         #region Flags
-
         public bool isOnGround;
         #endregion
 
@@ -71,14 +70,19 @@ namespace Control
 
         void Move()
         {
-            Vector2 targetDirection = PlayerInputHandler.Instance.InputVector.normalized;
+            Vector2 inputDirection = PlayerInputHandler.Instance.InputVector.normalized;
+            Vector3 targetDirection3 = inputDirection.y * Camera.main.transform.forward +
+                                      inputDirection.x * Camera.main.transform.right;
+            targetDirection3.y = 0;
+            targetDirection3 = targetDirection3.normalized;
+            Vector2 targetDirection2 = new Vector2(targetDirection3.x, targetDirection3.y);
             Vector3 velocity = RB.linearVelocity;
             Vector2 horizontalVel = new Vector2(velocity.x, velocity.z);
             if (isOnGround)
             {
-                if (targetDirection.magnitude > eps)
+                if (targetDirection2.magnitude > eps)
                 {
-                    horizontalVel = Vector2.ClampMagnitude(horizontalVel + targetDirection * Acceleration * Time.fixedDeltaTime, MaxSpeed * PlayerInputHandler.Instance.InputVector.magnitude); 
+                    horizontalVel = Vector2.ClampMagnitude(horizontalVel + targetDirection2 * Acceleration * Time.fixedDeltaTime, MaxSpeed * PlayerInputHandler.Instance.InputVector.magnitude); 
                 }
                 else
                 {
@@ -89,19 +93,18 @@ namespace Control
             }
             else
             {
-                if (targetDirection.magnitude > eps)
+                if (targetDirection2.magnitude > eps)
                 {
-                    horizontalVel = Vector2.ClampMagnitude(horizontalVel + targetDirection * Acceleration_Air * Time.fixedDeltaTime, MaxSpeed * PlayerInputHandler.Instance.InputVector.magnitude); 
+                    horizontalVel = Vector2.ClampMagnitude(horizontalVel + targetDirection2 * Acceleration_Air * Time.fixedDeltaTime, MaxSpeed * PlayerInputHandler.Instance.InputVector.magnitude); 
                 }
             }
             animator.SetFloat("Speed", horizontalVel.magnitude);
             velocity = new Vector3(horizontalVel.x, velocity.y - Gravity * Time.fixedDeltaTime, horizontalVel.y);
             RB.linearVelocity = velocity;
             
-            if (targetDirection.magnitude > eps)
+            if (targetDirection2.magnitude > eps)
             {
-                Vector3 targetDir3 = new Vector3(targetDirection.x, 0, targetDirection.y);
-                Quaternion targetRotation = Quaternion.LookRotation(targetDir3, Vector3.up);
+                Quaternion targetRotation = Quaternion.LookRotation(targetDirection3, Vector3.up);
                 characterTransform.rotation = Quaternion.Lerp(
                     characterTransform.rotation,
                     targetRotation,
