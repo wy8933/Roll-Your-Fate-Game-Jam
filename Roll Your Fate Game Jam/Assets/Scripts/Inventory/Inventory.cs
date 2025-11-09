@@ -35,6 +35,7 @@ namespace InventorySystem
             if (items.Count < maxItemCount && item != null)
             {
                 items.Add(item);
+                LoadUI();
                 return true;
             }
             else
@@ -52,6 +53,7 @@ namespace InventorySystem
                 if (item.itemID == itemID) 
                 {
                     items.Remove(item);
+                    LoadUI();
                     return;
                 }
             }
