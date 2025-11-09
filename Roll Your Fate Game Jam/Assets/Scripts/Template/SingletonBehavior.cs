@@ -19,13 +19,7 @@ namespace Template
 
         protected virtual void Awake()
         {
-            // Debug.LogWarning("Awake");
-            if (_instance == null)
-            {
-                _instance = GetComponent<T>();
-            }
-            else
-                Destroy(gameObject);
+            _instance = GetComponent<T>();
         }
     }
     

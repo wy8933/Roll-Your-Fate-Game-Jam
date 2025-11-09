@@ -108,6 +108,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3724230173719064501}
   - {fileID: 1538492798268456440}
   - {fileID: 8482311766545353870}
   - {fileID: 3482911110864719529}
@@ -179,10 +180,14 @@ MonoBehaviour:
   characterTransform: {fileID: 8482311766545353870}
   movementParam:
     acceleration: 100
+    acceleration_Air: 10
     maxSpeed: 5
     brakeFactor: 0.5
     rotateSpeed: 5
     gravity: 5
+    groundDetectionCenter: {x: 0, y: -1, z: 0}
+    groundDetectionRadius: 0.5
+  isOnGround: 0
 --- !u!114 &7051961794941646609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,12 +214,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   setting: {fileID: 11400000, guid: 9dc3fd0f8e0019142bb866807e902366, type: 2}
+  MaxOxygen: 0
   OxygenChanged:
     m_PersistentCalls:
       m_Calls: []
-  NoMoreOxygen:
+  NoOxygen:
     m_PersistentCalls:
       m_Calls: []
+  isConsumingOxygen: 0
 --- !u!1 &397812396759734802
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,7 +273,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 1555960731340716236}
+  background: {fileID: 0}
   iconCanvasGroup: {fileID: 5983761091307006865}
+  _selectedScale: 1.08
 --- !u!1 &420136082750885338
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,6 +726,143 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!1 &3474741462384511101
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3724230173719064501}
+  - component: {fileID: 38725721727559514}
+  - component: {fileID: 8945659443139913896}
+  - component: {fileID: 4691100331374086827}
+  m_Layer: 0
+  m_Name: Minimap Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3724230173719064501
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3474741462384511101}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 481.94, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5037017028332668187}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!20 &38725721727559514
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3474741462384511101}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 1
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 8400000, guid: 09de2a3480c5aca4d82a839b4b9ab25f, type: 2}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!81 &8945659443139913896
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3474741462384511101}
+  m_Enabled: 1
+--- !u!114 &4691100331374086827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3474741462384511101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1 &3785283483339723659
 GameObject:
   m_ObjectHideFlags: 0
@@ -931,7 +1077,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 5231028436290473271}
+  background: {fileID: 0}
   iconCanvasGroup: {fileID: 8369740261967207717}
+  _selectedScale: 1.08
 --- !u!1 &4714065019419153821
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,7 +1185,7 @@ MonoBehaviour:
   Lookahead:
     Enabled: 1
     Time: 0.4
-    Smoothing: 3
+    Smoothing: 8
     IgnoreY: 1
 --- !u!1 &4858165812219618818
 GameObject:
@@ -1090,7 +1238,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 1025768818746047581}
+  background: {fileID: 0}
   iconCanvasGroup: {fileID: 3774401495788076943}
+  _selectedScale: 1.08
 --- !u!1 &5716657064515952422
 GameObject:
   m_ObjectHideFlags: 0
@@ -1278,7 +1428,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 2797193401114240790}
+  background: {fileID: 0}
   iconCanvasGroup: {fileID: 8947591593720390117}
+  _selectedScale: 1.08
 --- !u!1 &6258657915008200724
 GameObject:
   m_ObjectHideFlags: 0
@@ -1459,7 +1611,7 @@ GameObject:
   - component: {fileID: 4898336554425302915}
   m_Layer: 0
   m_Name: Player Interaction
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1765,7 +1917,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 4164934208381010564}
+  background: {fileID: 0}
   iconCanvasGroup: {fileID: 1035321556342540942}
+  _selectedScale: 1.08
 --- !u!1 &8187958107276076137
 GameObject:
   m_ObjectHideFlags: 0

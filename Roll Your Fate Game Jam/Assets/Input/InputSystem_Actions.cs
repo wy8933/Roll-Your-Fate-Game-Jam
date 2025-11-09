@@ -1140,6 +1140,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""258bce02-1fd3-433c-a7d2-978f23052305"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MiddleClick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""7236c0d9-6ca3-47cf-a6ee-a97f5b59ea77"",
                     ""path"": ""<XRController>/devicePosition"",
                     ""interactions"": """",
