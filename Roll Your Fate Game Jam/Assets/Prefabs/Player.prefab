@@ -1297,10 +1297,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This is a test message, this test message is for testing purpose, not useful.
+  m_text: 'Mission Status: Obriting
+
+    Location: Moon Base
+
+    Date: 2119.6.1
+
+    ID:
+    7Z98AX - 40'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0123bd94007fb274aba7502e3952eea8, type: 2}
+  m_sharedMaterial: {fileID: -8094899879301635501, guid: 0123bd94007fb274aba7502e3952eea8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
