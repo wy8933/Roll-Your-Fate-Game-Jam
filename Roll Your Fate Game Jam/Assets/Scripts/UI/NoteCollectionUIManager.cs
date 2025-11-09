@@ -1,11 +1,13 @@
 using InventorySystem;
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Data.Common;
 using TMPro;
 using UI;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class NoteCollectionUIManager : MonoBehaviour
 {
@@ -19,6 +21,7 @@ public class NoteCollectionUIManager : MonoBehaviour
     [SerializeField] private InputActionReference _cancelAction;
 
     public int currentIndex;
+    public ScrollRect scrollRect;
 
     private void OnEnable()
     {
@@ -48,6 +51,15 @@ public class NoteCollectionUIManager : MonoBehaviour
 
         int last = Mathf.Max(0, noteItems.Count - 1);
         currentIndex = MoveCursor(currentIndex, stepX, stepY, 1, last);
+
+        if (currentIndex > 7)
+        {
+            scrollRect.verticalScrollbar.value = 0;
+        }
+        else 
+        {
+            scrollRect.verticalScrollbar.value = 1;
+        }
 
         ShowFullNote(currentIndex);
 
