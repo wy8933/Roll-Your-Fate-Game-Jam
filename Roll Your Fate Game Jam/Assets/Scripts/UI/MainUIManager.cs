@@ -1,4 +1,5 @@
 using Control;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -52,16 +53,27 @@ public class MainUIManager : MonoBehaviour
     //     settingSO.UtilitySetting.mouseSensitivity = value;
     // }
 
-    public void StartGame()
-    {
-        GetComponent<PlayerInputHandler>().SwitchTo(ActionMap.Player);
-        Destroy(gameObject);
-        SceneManager.LoadScene(1);
-    }
 
     public void CloseGame() 
     {
         Application.Quit();
+    }
+    public void StartGame()
+    {
+        GetComponent<PlayerInputHandler>().SwitchTo(ActionMap.Player);
+        VideoManager.Instance.PlayStartClip();
+        AudioManager.Instance.StopMusic();
+        mainMenuButtons.SetActive(true);
+        StartCoroutine(LoadMain());
+    }
+
+    private IEnumerator LoadMain()
+    {
+        Debug.Log("Start");
+        yield return new WaitForSeconds(15); 
+        Debug.Log(1);
+        SceneManager.LoadScene(1);
+        Destroy(gameObject);
     }
 
 }

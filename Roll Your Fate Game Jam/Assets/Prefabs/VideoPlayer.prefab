@@ -82,5 +82,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 6005607856153995963}
-  startClip: {fileID: 32900000, guid: bf3475920c8fb7c4e9b45bc7a76a7bf7, type: 3}
+  startClip: {fileID: 32900000, guid: 7956a7d5395984c47b7f24fb7fc990d6, type: 3}
   endClip: {fileID: 32900000, guid: 59aeb07a2550883469af67c3334705c9, type: 3}
