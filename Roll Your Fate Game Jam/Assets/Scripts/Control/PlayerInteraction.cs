@@ -35,16 +35,17 @@ namespace Control {
         private void Update()
         {
             _current = FindBestTarget();
-            if (_current != null)
-            {
-                _promptUI.gameObject.SetActive(true);
-                _promptUI.gameObject.transform.parent.gameObject.transform.position = _current.Transform.position + canvasOffset;
-                _promptUI.text = _current.Prompt;
-            }
-            else
-            {
-                _promptUI.gameObject.SetActive(false);
-            }
+            if(_promptUI)
+                if (_current != null)
+                {
+                    _promptUI.gameObject.SetActive(true);
+                    _promptUI.gameObject.transform.parent.gameObject.transform.position = _current.Transform.position + canvasOffset;
+                    _promptUI.text = _current.Prompt;
+                }
+                else
+                {
+                    _promptUI.gameObject.SetActive(false);
+                }
         }
 
         private void OnTriggerEnter(Collider other)
