@@ -47,6 +47,7 @@ namespace Interactable {
 
             yield return new WaitForSeconds(1);
 
+            AudioManager.Instance.StopMusic();
             VideoManager.Instance.PlayEndClip();
         }
 
