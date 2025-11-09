@@ -77,6 +77,7 @@ namespace Control {
                 {
 
                     _interactableInRange.Remove(interactable);
+                    interactable.CanInteract(gameObject);
                 }
             }
             else
@@ -85,6 +86,7 @@ namespace Control {
                 if (interactable != null)
                 {
                     _interactableInRange.Remove(interactable);
+                    interactable.CanInteract(gameObject);
                 }
             }
         }

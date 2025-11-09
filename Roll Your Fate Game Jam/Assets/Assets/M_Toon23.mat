@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_ToonInUse LOG
+  m_Name: M_Toon23
   m_Shader: {fileID: 4800000, guid: 60e29b7951f20da47b11861d166b7036, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -123,7 +123,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AdaptiveThicnkess: 0
+    - _AdaptiveThicnkess: 0.149
     - _AdditionalLightsAmount: 0
     - _AdditionalLightsFaloff: 0
     - _AdditionalLightsIntesity: 1
@@ -171,9 +171,9 @@ Material:
     - _NormalMapStrength: 1
     - _OcclusionStrength: 1
     - _OutlineDynamicSpeed: 0
-    - _OutlineNoiseIntesity: 1
+    - _OutlineNoiseIntesity: 0.88
     - _OutlineNoiseScale: 10
-    - _OutlineTextureStrength: 0
+    - _OutlineTextureStrength: 0.049
     - _OutlineType: 0
     - _OverlayMode: 2
     - _OverlayMode1: 0
@@ -187,10 +187,10 @@ Material:
     - _QueueOffset: 0
     - _RampDiffuseTextureLoaded: 1
     - _ReceiveShadows: 1
-    - _RimPower: 1.23
-    - _RimSmoothness: 0.185
+    - _RimPower: 1.89
+    - _RimSmoothness: 0.143
     - _RimSplitColor: 0
-    - _RimThickness: 1.32
+    - _RimThickness: 1.7
     - _Rotation: 0
     - _ScrollSpeed: 0.0354
     - _SecondaryIntensity: 1
@@ -216,7 +216,7 @@ Material:
     - _StepOffset: -0.023
     - _Strength: 0
     - _Surface: 0
-    - _Thicnkess: 0.0504
+    - _Thicnkess: 0.0372
     - _UVAnimationSpeed: 1.869
     - _UVAnimationSpeedSpec: 0
     - _UVAnimationSpeedWarp: 2
@@ -262,9 +262,9 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HalftoneColor: {r: 0, g: 0, b: 0, a: 1}
     - _HatchingColor: {r: 0.10323959, g: 0.11573344, b: 0.1509434, a: 1}
-    - _OutlineColor: {r: 0.6830188, g: 0.031453878, b: 0, a: 0}
+    - _OutlineColor: {r: 0.86415094, g: 0.07623211, b: 0.050544634, a: 0}
     - _PrimaryColor: {r: 1, g: 1, b: 1, a: 0}
-    - _RimColor: {r: 1, g: 0.21761526, b: 0, a: 0}
+    - _RimColor: {r: 1, g: 0.15506814, b: 0, a: 0}
     - _RimShadowColor: {r: 0, g: 0.055514283, b: 0.9622641, a: 0}
     - _SecondaryColor: {r: 1, g: 1, b: 1, a: 0}
     - _ShadowColor: {r: 0, g: 0, b: 0, a: 0}

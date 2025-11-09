@@ -9,7 +9,7 @@ public class MinigameLauncher : MonoBehaviour, IInteractable
 {
     public Transform Transform => transform;
 
-    [SerializeField] private string _prompt = "Interact";
+    [SerializeField] public string _prompt = "Interact";
     public string Prompt => _prompt;
 
     public GameObject minigamePrefab;

@@ -121,10 +121,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c22f7c760d1f7b4380aa146ad9953d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prompt: Fix Antenna
+  _prompt: 
+  minigamePrefab: {fileID: 7585890979435992330, guid: 377b2f3face2dbe43a5f08005fd0ad9c, type: 3}
+  MinigameCleared:
+    m_PersistentCalls:
+      m_Calls: []
+  showedPrompt: Fix Antenna
   isFixed: 0
   neededItemList:
   - 1
   - 2
   - 4
-  _promptUI: {fileID: 8473340398114915398}

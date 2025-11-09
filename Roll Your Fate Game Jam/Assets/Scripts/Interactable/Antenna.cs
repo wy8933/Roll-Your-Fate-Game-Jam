@@ -2,46 +2,41 @@ using System;
 using UnityEngine;
 using InventorySystem;
 
-namespace Interactable { 
+namespace Interactable {
     public class Atenna : MonoBehaviour, IInteractable
     {
         public Transform Transform => transform;
 
         [SerializeField] private string _prompt;
 
-        public string Prompt => _prompt;
+        private string showedPrompt;
+
+        public string Prompt => showedPrompt;
 
         public bool isFixed = false;
 
         public string[] neededItemList = new string[3];
 
-        public GameObject _promptUI;
+        public MinigameLauncher minigame;
 
         public bool CanInteract(GameObject player)
         {
-            if (isFixed) 
+            if (isFixed)
             {
                 return false;
             }
 
-            foreach (string itemID in neededItemList) 
+            foreach (string itemID in neededItemList)
             {
-                if (!Inventory.Instance.ContainItem(itemID)) 
+                if (!Inventory.Instance.ContainItem(itemID))
                 {
-                    if (_promptUI != null)
-                    {
-                        _promptUI.gameObject.SetActive(true);
-                        _promptUI.gameObject.transform.position = transform.position + new Vector3(0,2,0);
-                    }
-                    else
-                    {
-                        _promptUI.gameObject.SetActive(false);
-                    }
+                    showedPrompt = "You will need 1 Atenna, 1 Chip and 1 Battery";
 
-                    return false;
+                    return true;
                 }
             }
 
+            showedPrompt = _prompt;
             return true;
         }
 
@@ -53,14 +48,21 @@ namespace Interactable {
                 {
                     Inventory.Instance.RemoveItem(itemID);
                 }
-                else 
+                else
                 {
                     return false;
                 }
             }
 
-            isFixed = true;
+            minigame.Interact();
+
             return true;
+        }
+
+        public void SetFixedTrue() 
+        {
+            Debug.Log("it is now fixed");
+            isFixed = true;
         }
     }
 }
