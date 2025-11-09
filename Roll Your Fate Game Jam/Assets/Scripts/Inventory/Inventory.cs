@@ -76,5 +76,43 @@ namespace InventorySystem
                 itemBlocks[i].SetIconAlphaZero();
             }
         }
+
+        public bool IsAtCap() 
+        {
+            if (items.Count >= maxItemCount) 
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool ContainItem(ItemSO item) 
+        {
+            foreach (ItemSO i in items) 
+            {
+                if (i.itemID == item.itemID) 
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public int ItemCount(ItemSO item) 
+        {
+            int count = 0;
+
+            foreach (ItemSO i in items) 
+            {
+                if (i.itemID == item.itemID) 
+                {
+                    count++;
+                }
+            }
+
+            return count;
+        }
     }
 }
