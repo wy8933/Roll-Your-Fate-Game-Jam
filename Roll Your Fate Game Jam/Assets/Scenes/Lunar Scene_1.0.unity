@@ -64528,7 +64528,6 @@ Transform:
   m_PrefabInstance: {fileID: 1733887709}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 --- !u!1001 &1734316154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64603,8 +64602,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7547074777034131005, guid: f42579c51d1328f4d8fb30d4fcd5429b, type: 3}
   m_PrefabInstance: {fileID: 1734316154}
   m_PrefabAsset: {fileID: 0}
-=======
->>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 --- !u!1001 &1738209084
@@ -64820,11 +64817,7 @@ PrefabInstance:
     - target: {fileID: 7547074777034131005, guid: f42579c51d1328f4d8fb30d4fcd5429b, type: 3}
       propertyPath: m_LocalPosition.x
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       value: 0
-=======
-      value: 234
->>>>>>> Stashed changes
 =======
       value: 234
 >>>>>>> Stashed changes
@@ -64836,11 +64829,7 @@ PrefabInstance:
     - target: {fileID: 7547074777034131005, guid: f42579c51d1328f4d8fb30d4fcd5429b, type: 3}
       propertyPath: m_LocalPosition.z
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       value: 0
-=======
-      value: 468.82
->>>>>>> Stashed changes
 =======
       value: 468.82
 >>>>>>> Stashed changes
