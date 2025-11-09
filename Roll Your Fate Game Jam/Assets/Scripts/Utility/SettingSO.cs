@@ -21,4 +21,5 @@ public class GameSetting
 {
     public float initialOxygen;
     public float oxygenConsumingRate;
+    public float oxygenPerContainer;
 }

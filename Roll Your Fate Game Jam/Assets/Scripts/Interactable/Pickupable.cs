@@ -1,5 +1,6 @@
 using Control;
 using InventorySystem;
+using UI.Minimap;
 using UnityEngine;
 
 public class Pickupable : MonoBehaviour, IInteractable
@@ -29,6 +30,7 @@ public class Pickupable : MonoBehaviour, IInteractable
         Inventory.Instance.LoadUI();
         gameObject.SetActive(false);
         PlayerInteraction.Instance.RemoveInteractable(this);
+        MinimapManager.Instance.Remove(gameObject);
         return true;
     }
 }

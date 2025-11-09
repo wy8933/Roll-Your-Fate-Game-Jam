@@ -1,4 +1,7 @@
+using System.Collections.Generic;
+using Control;
 using UnityEngine;
+using UnityEngine.Playables;
 
 namespace Interactable
 {
@@ -7,8 +10,9 @@ namespace Interactable
         public Transform Transform => transform;
         public string prompt;
         public string Prompt => prompt;
-        public GameObject sectorSelectionUI;
+        public GameObject sectorSelectionPrefab;
         public Canvas targetCanvas;
+        private GameObject sectorSelectionUI;
             
         public bool CanInteract(GameObject player)
         {
@@ -17,7 +21,11 @@ namespace Interactable
 
         public bool Interact()
         {
-            Instantiate(sectorSelectionUI, targetCanvas.transform);
+            if(!sectorSelectionUI)
+                sectorSelectionUI = Instantiate(sectorSelectionPrefab, targetCanvas.transform);
+            else
+                sectorSelectionUI.SetActive(true);
+            PlayerInputHandler.Instance.SwitchTo(ActionMap.UI);
             return true;
         }
     }
