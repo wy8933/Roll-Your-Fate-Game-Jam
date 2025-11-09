@@ -93,7 +93,7 @@ namespace Minigame.Circuit
                     int ny = y + Mathf.RoundToInt(dir[i].y);
                     if(nx < 0 || nx == 4 || ny < 0 || ny == 4)
                         continue;
-                    if (connected[nx][ny] != id)
+                    if (connected[nx][ny] != id && Grid[nx][ny] != null)
                     {
                         connected[nx][ny] = id;
                         DFS(nx, ny);
