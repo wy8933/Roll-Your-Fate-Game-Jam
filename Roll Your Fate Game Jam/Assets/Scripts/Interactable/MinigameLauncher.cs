@@ -15,15 +15,21 @@ public class MinigameLauncher : MonoBehaviour, IInteractable
     public GameObject minigamePrefab;
     private MinigameController minigame;
 
-    public Canvas targetCanvas;
+    private Canvas targetCanvas;
 
     public UnityEvent MinigameCleared;
 
     bool isCleared = false;
-    
+
+    private void Awake()
+    {
+        if(targetCanvas == null)
+            targetCanvas = GameObject.FindWithTag("Minigame Canvas").GetComponent<Canvas>();
+    }
+
     public void Start()
     {
-        MinigameCleared.AddListener(()=>{Debug.Log("MinigameCleared!!!!!!!!!!");});
+        MinigameCleared.AddListener(()=>{Debug.Log("MinigameCleared!");});
     }
 
     private void OnDisable()
