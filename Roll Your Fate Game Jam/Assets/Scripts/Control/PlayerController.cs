@@ -75,7 +75,7 @@ namespace Control
                                       inputDirection.x * Camera.main.transform.right;
             targetDirection3.y = 0;
             targetDirection3 = targetDirection3.normalized;
-            Vector2 targetDirection2 = new Vector2(targetDirection3.x, targetDirection3.y);
+            Vector2 targetDirection2 = new Vector2(targetDirection3.x, targetDirection3.z);
             Vector3 velocity = RB.linearVelocity;
             Vector2 horizontalVel = new Vector2(velocity.x, velocity.z);
             if (isOnGround)
