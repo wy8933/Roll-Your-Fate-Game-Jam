@@ -10,7 +10,7 @@ namespace Game
         [SerializeField] SettingSO setting;
         
         private float curOxygen;
-        public float MaxOxygen;
+        private float MaxOxygen;
         public float OxygenPercentage => curOxygen / MaxOxygen;
         
         [HideInInspector]
@@ -30,9 +30,9 @@ namespace Game
             OxygenChanged.RemoveAllListeners();
         }
 
-        public void RechargeOxygen()
+        public void SetOxygen(float oxygen)
         {
-            curOxygen = MaxOxygen;
+            curOxygen = MaxOxygen = oxygen;
         }
         
         void Update()
