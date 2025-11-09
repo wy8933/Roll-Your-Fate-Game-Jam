@@ -8,15 +8,12 @@ namespace Game
     public class Player: SingletonBehavior<Player>
     {
         [SerializeField] SettingSO setting;
-        
         private float curOxygen;
         private float MaxOxygen;
         public float OxygenPercentage => curOxygen / MaxOxygen;
         
         [HideInInspector]
         public UnityEvent<float> OxygenChanged = new UnityEvent<float>();
-        [HideInInspector]
-        public UnityEvent NoOxygen = new UnityEvent();
 
         public bool isConsumingOxygen = false;
 
@@ -46,6 +43,11 @@ namespace Game
             {
                 curOxygen -= setting.GameSetting.oxygenConsumingRate * Time.deltaTime;
                 OxygenChanged?.Invoke(OxygenPercentage);
+            }
+
+            if (curOxygen <= 0)
+            {
+                GameManager.Instance.RunOutOxygen();
             }
         }
         

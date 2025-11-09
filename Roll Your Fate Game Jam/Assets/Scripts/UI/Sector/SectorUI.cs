@@ -8,6 +8,7 @@ namespace UI.Sector
     public class SectorUI: MonoBehaviour
     {
         private Image image;
+        public bool isOpened;
 
         private void Awake()
         {
@@ -16,7 +17,7 @@ namespace UI.Sector
 
         public void UpdateHover(bool isHovered)
         {
-            if (isHovered)
+            if (isHovered && isOpened)
             {
                 image.transform.localScale = new Vector3(3,3,3);
             }

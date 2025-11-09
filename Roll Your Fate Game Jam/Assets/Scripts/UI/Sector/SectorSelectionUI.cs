@@ -57,7 +57,7 @@ namespace UI.Sector
 
         private void OnClick()
         {
-            if (targetSectorID != -1)
+            if (targetSectorID != -1 && sectors[targetSectorID].isOpened)
             {
                 gameObject.SetActive(false);
                 GameManager.Instance.SetOff(targetSectorID);
