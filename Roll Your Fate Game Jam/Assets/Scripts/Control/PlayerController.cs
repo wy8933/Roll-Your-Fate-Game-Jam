@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.Cinemachine;
 using UnityEngine;
@@ -28,9 +29,11 @@ namespace Control
 
         #endregion
 
-        #region AudioClips
+        #region Flags
 
-        public AudioClip WalkSFX;
+        #endregion
+
+        #region AudioClips
 
         #endregion
         
@@ -51,11 +54,13 @@ namespace Control
 
         private void Update()
         {
+ 
         }
 
         private void FixedUpdate()
         {
             Move();
+            
         }
 
         #region Movement
