@@ -64527,6 +64527,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4944680388452134, guid: 3deace0cd22ccd54b809b039e70ff8f6, type: 3}
   m_PrefabInstance: {fileID: 1733887709}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
 --- !u!1001 &1734316154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64601,6 +64602,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7547074777034131005, guid: f42579c51d1328f4d8fb30d4fcd5429b, type: 3}
   m_PrefabInstance: {fileID: 1734316154}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> Stashed changes
 --- !u!1001 &1738209084
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64813,7 +64816,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7547074777034131005, guid: f42579c51d1328f4d8fb30d4fcd5429b, type: 3}
       propertyPath: m_LocalPosition.x
+<<<<<<< Updated upstream
       value: 0
+=======
+      value: 234
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 7547074777034131005, guid: f42579c51d1328f4d8fb30d4fcd5429b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -64821,7 +64828,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7547074777034131005, guid: f42579c51d1328f4d8fb30d4fcd5429b, type: 3}
       propertyPath: m_LocalPosition.z
+<<<<<<< Updated upstream
       value: 0
+=======
+      value: 468.82
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 7547074777034131005, guid: f42579c51d1328f4d8fb30d4fcd5429b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -86035,3 +86046,23 @@ SceneRoots:
   - {fileID: 481538341}
   - {fileID: 1063109141}
   - {fileID: 374016498}
+<<<<<<< Updated upstream
+=======
+  - {fileID: 1742131236}
+  - {fileID: 969437023}
+  - {fileID: 151093878}
+  - {fileID: 312624496}
+  - {fileID: 1859817439}
+  - {fileID: 413572122}
+  - {fileID: 650543837}
+  - {fileID: 1951597405}
+  - {fileID: 278713051}
+  - {fileID: 629506582}
+  - {fileID: 1368906816}
+  - {fileID: 1486627398}
+  - {fileID: 839702531}
+  - {fileID: 1886425798}
+  - {fileID: 1119446882}
+  - {fileID: 441321106}
+  - {fileID: 959410737}
+>>>>>>> Stashed changes
