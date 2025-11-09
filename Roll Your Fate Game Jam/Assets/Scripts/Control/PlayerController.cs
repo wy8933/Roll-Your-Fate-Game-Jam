@@ -14,6 +14,7 @@ namespace Control
         [SerializeField] private Transform characterTransform;
         private CinemachineCamera playerCamera;
         private Rigidbody RB;
+        private Animator animator;
         #endregion
         
         #region Kinematic
@@ -30,6 +31,7 @@ namespace Control
         private void Awake()
         {
             RB = GetComponent<Rigidbody>();
+            animator = GetComponentInChildren<Animator>();
         }
 
         private void Start()
@@ -67,6 +69,7 @@ namespace Control
                 if (horizontalVel.magnitude < eps)
                     horizontalVel = Vector2.zero;
             }
+            animator.SetFloat("Speed", horizontalVel.magnitude);
             velocity = new Vector3(horizontalVel.x, velocity.y - Gravity * Time.fixedDeltaTime, horizontalVel.y);
             RB.linearVelocity = velocity;
 
