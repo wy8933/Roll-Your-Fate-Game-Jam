@@ -1,4 +1,5 @@
 using InventorySystem;
+using System.Collections;
 using UnityEngine;
 
 namespace Interactable { 
@@ -36,13 +37,18 @@ namespace Interactable {
                 return false;
             }
 
-            GameOver();
+            StartCoroutine(GameOver());
             return true;
         }
 
-        public void GameOver()
+        public IEnumerator GameOver()
         {
             Debug.Log("Game is now over!");
+
+            yield return new WaitForSeconds(1);
+
+            VideoManager.Instance.PlayEndClip();
         }
+
     }
 }
