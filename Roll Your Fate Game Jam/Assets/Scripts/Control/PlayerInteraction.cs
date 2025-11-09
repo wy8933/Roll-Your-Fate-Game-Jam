@@ -13,6 +13,15 @@ namespace Control {
 
         public Vector3 canvasOffset = Vector3.zero;
 
+        public static PlayerInteraction Instance;
+
+        public void Awake()
+        {
+            if(Instance == null)
+                Instance = this;
+        }
+
+
         private void OnEnable()
         {
             PlayerInputHandler.Instance.Interact += OnInteract;

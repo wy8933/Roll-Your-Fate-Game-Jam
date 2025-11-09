@@ -5,11 +5,11 @@ namespace InventorySystem {
     [CreateAssetMenu(fileName = "CollectedStickyNoteSO", menuName = "CollectedStickyNoteSO")]
     public class CollectedStickyNoteSO : ScriptableObject
     {
-        public Dictionary<int, string> collectedNote = new Dictionary<int, string>();
+        public List<NoteData> collectedNote = new List<NoteData>();
 
-        public void AddCollectedNote(int id, string text) 
+        public void AddCollectedNote(NoteData data) 
         {
-            collectedNote.Add(id, text);
+            collectedNote.Add(data);
         }
     }
 }

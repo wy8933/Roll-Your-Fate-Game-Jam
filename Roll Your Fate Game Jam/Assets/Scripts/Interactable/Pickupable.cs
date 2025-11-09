@@ -1,5 +1,6 @@
-using UnityEngine;
+using Control;
 using InventorySystem;
+using UnityEngine;
 
 public class Pickupable : MonoBehaviour, IInteractable
 {
@@ -27,6 +28,7 @@ public class Pickupable : MonoBehaviour, IInteractable
         Debug.Log($"Picked: {item.itemID}");
         Inventory.Instance.LoadUI();
         gameObject.SetActive(false);
+        PlayerInteraction.Instance.RemoveInteractable(this);
         return true;
     }
 }
