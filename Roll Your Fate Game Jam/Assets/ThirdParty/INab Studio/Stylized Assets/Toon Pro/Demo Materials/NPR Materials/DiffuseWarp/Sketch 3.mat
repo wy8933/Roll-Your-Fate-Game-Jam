@@ -12,22 +12,24 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - _OUTLINETYPE_NORMAL
   - _OVERLAYMODE1_NONE
   - _OVERLAYMODE_NONE
-  - _USELIGHTRAMP_DIFFUSERAMP
-  - _USESPECULAR_ON
-  m_InvalidKeywords:
-  - _OUTLINETYPE_NORMAL
+  - _RIMSPLITCOLOR_NOSPLIT
   - _USEADAPTIVESCREENUVSWARP_ON
   - _USEADAPTIVEUVSSPECULAR_ON
   - _USEADDITIONALLIGHTSDIFFUSE_ON
-  - _USEDIFFUSEWARP_ON
-  - _USELIGHTRAMPON
+  - _USELIGHTRAMP_DIFFUSERAMP
   - _USEOUTLINE_ON
   - _USEPURESKETCH_ON
   - _USESCREENUVSSPECULAR_ON
   - _USESCREENUVSWARP_ON
   - _USESCREENUVS_ON
+  - _USESPECULAR_ON
+  m_InvalidKeywords:
+  - _USEDIFFUSEWARP_ON
+  - _USELIGHTRAMPON
+  - _USESHADOWS_ON
   - _USESPECULARMASK_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -111,6 +113,18 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _AdaptiveThicnkess: 0
@@ -173,6 +187,7 @@ Material:
     - _PrimaryIntensity: 1
     - _PrimaryPower: 0.46
     - _PrimarySmoothness: 0.5
+    - _QueueControl: -1
     - _QueueOffset: 0
     - _RampDiffuseTextureLoaded: 1
     - _ReceiveShadows: 1
@@ -260,6 +275,7 @@ Material:
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!114 &8211425756804703187
 MonoBehaviour:
   m_ObjectHideFlags: 11
