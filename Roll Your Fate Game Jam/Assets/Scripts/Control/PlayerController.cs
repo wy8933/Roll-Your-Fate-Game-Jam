@@ -27,6 +27,12 @@ namespace Control
         private float RotateSpeed => movementParam.rotateSpeed;
 
         #endregion
+
+        #region AudioClips
+
+        public AudioClip WalkSFX;
+
+        #endregion
         
         private void Awake()
         {
@@ -72,7 +78,7 @@ namespace Control
             animator.SetFloat("Speed", horizontalVel.magnitude);
             velocity = new Vector3(horizontalVel.x, velocity.y - Gravity * Time.fixedDeltaTime, horizontalVel.y);
             RB.linearVelocity = velocity;
-
+            
             if (targetDirection.magnitude > eps)
             {
                 Vector3 targetDir3 = new Vector3(targetDirection.x, 0, targetDirection.y);
@@ -97,33 +103,6 @@ namespace Control
             PlayerInputHandler.Instance.Disable();
         }
 
-        #region Interaction
-        
-        // List<IInteractable> interactionTargets = new List<IInteractable>();
-        // public void HandleReceivedContact(ContactContext context) // Handle contacts sent from the child called detection box
-        // {
-        //     GameObject senderObj = context.sender.gameObject;
-        //     
-        //     IInteractable interactableObject = senderObj.GetComponent<IInteractable>();
-        //     if (interactableObject != null)
-        //     {
-        //         if (context.contactType == ContactType.OnTriggerEnter)
-        //         {
-        //             interactionTargets.Add(interactableObject);
-        //         }
-        //         else if(context.contactType == ContactType.OnTriggerExit)
-        //         {
-        //             interactionTargets.Remove(interactableObject);
-        //         }
-        //     }
-        // }
-
-        public void Interact()
-        {
-            
-        }
-
-        #endregion
     }
 
 
