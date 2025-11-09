@@ -1,3 +1,4 @@
+using Control;
 using InventorySystem;
 using UnityEngine;
 
@@ -36,6 +37,15 @@ public class NoteCollection : MonoBehaviour, IInteractable
     {
         collectedStickyNotePanel.SetActive(true);
         collectedStickyNotePanel.GetComponent<NoteCollectionUIManager>().SetUp(collectedStickyNoteSO);
+        PlayerInputHandler.Instance.SwitchTo(ActionMap.UI);
+        PlayerInputHandler.Instance.RightClick += CancelInteraction;
         return true;
+    }
+
+    public void CancelInteraction() 
+    {
+        collectedStickyNotePanel.SetActive(false);
+        PlayerInputHandler.Instance.SwitchTo(ActionMap.Player);
+        PlayerInputHandler.Instance.RightClick -= CancelInteraction;
     }
 }
