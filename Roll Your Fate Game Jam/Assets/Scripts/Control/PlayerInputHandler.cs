@@ -18,6 +18,7 @@ namespace Control
         
         #region ActionMap.UI
         public Action<Vector2> Navigate;
+        public Action<Vector2> Look;
         public Action Click;
         public Action RightClick;
         #endregion
@@ -33,6 +34,7 @@ namespace Control
             inputAction.Player.Interact.performed += OnInteractPressed;
             inputAction.Player.ToggleHUD.performed += OnToggleHUDPressed;
             inputAction.UI.Navigate.performed += OnNavigate;
+            inputAction.UI.Look.performed += OnLook;
             inputAction.UI.Click.performed += OnUIClick;
             inputAction.UI.RightClick.performed += OnUIRightClick;
             currentActionMap = ActionMap.Player;
@@ -95,6 +97,12 @@ namespace Control
         {
             Vector2 value = ctx.ReadValue<Vector2>();
             Navigate?.Invoke(value);
+        }
+        
+        protected void OnLook(InputAction.CallbackContext ctx)
+        {
+            Vector2 value = ctx.ReadValue<Vector2>();
+            Look?.Invoke(value);
         }
         
         protected void OnUIClick(InputAction.CallbackContext ctx)
