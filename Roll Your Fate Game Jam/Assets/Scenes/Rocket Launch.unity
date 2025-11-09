@@ -593,6 +593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 821360041}
   rotationSmooth: 5
+  rotationOffset: {x: -18, y: 0, z: 0}
 --- !u!114 &207659233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1561,6 +1562,8 @@ MonoBehaviour:
   loop: 0
   pingPong: 0
   lookForward: 0
+  rotateSpeed: 0
+  waitAtPoint: 1
 --- !u!1001 &896617809
 PrefabInstance:
   m_ObjectHideFlags: 0
