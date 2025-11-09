@@ -112,4 +112,14 @@ public class RepairAntenna : MonoBehaviour
         primaryTargetAngle = Random.Range(0f, 360f);
         secondaryTargetAngle = Random.Range(0f, 360f);
     }
+
+    public bool IsCompelete() 
+    {
+        if (primaryLocked && secondaryLocked) 
+        {
+            return true;
+        }
+
+        return false;
+    }
 }

@@ -18,6 +18,14 @@ namespace Minigame
         bool isInitialized = false;
         
         protected float timer = 0f;
+        
+        protected AudioSource audioSource;
+        protected AudioClip winSFX;
+
+        protected void Awake()
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
 
         protected virtual void Update()
         {

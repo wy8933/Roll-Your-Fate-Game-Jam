@@ -3,20 +3,24 @@ namespace Minigame
 {
     public class RepairAntennaMinigame : MinigameController
     {
+        public RepairAntenna repairAntenna;
 
-        public override void OnNavigate(Vector2 dir)
+        protected override void Update()
         {
+            base.Update();
 
-        }
-
-        public override void OnClick()
-        {
-            
+            if (repairAntenna != null) 
+            {
+                if (repairAntenna.IsCompelete()) 
+                {
+                    GameClear();
+                }
+            }
         }
 
         public override void OnRightClick()
         {
-
+            gameObject.SetActive(false);
         }
     }
 }

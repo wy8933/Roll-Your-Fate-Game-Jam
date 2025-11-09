@@ -14,9 +14,7 @@ namespace Minigame
         List<Image> commandsUIs = new List<Image>();
         public int numberOfCommands;
         
-        AudioSource audioSource;
         AudioClip inputSFX;
-        AudioClip winSFX;
         AudioClip loseSFX;
         
         int index;
