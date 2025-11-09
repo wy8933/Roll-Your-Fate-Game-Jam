@@ -25,11 +25,13 @@ namespace UI.Sector
         {
             PlayerInputHandler.Instance.SwitchTo(ActionMap.UI);
             PlayerInputHandler.Instance.Point += OnPoint;
+            PlayerInputHandler.Instance.Click += OnClick;
         }
 
         void OnDisable()
         {
             PlayerInputHandler.Instance.Point -= OnPoint;
+            PlayerInputHandler.Instance.Click -= OnClick;
         }
 
         private int targetSectorID = -1;
@@ -45,7 +47,7 @@ namespace UI.Sector
                 Debug.Log(rotation / (Mathf.PI / 3));
                 targetSectorID = Mathf.RoundToInt(Mathf.Floor(rotation / (Mathf.PI / 3)));
                 sectors[targetSectorID].UpdateHover(true);
-                Debug.Log("targetSectorID");
+                Debug.Log(targetSectorID);
             }
             else
             {
@@ -57,16 +59,18 @@ namespace UI.Sector
 
         private void OnClick()
         {
-            Debug.Log(targetSectorID);
+            Debug.Log($"GO:{targetSectorID}");
             if (targetSectorID != -1 && sectors[targetSectorID].isOpened)
             {
                 gameObject.SetActive(false);
+                PlayerInputHandler.Instance.SwitchTo(ActionMap.Player);
                 GameManager.Instance.SetOff(targetSectorID);
             }
         }
 
         private void OnRightClick()
         {
+            PlayerInputHandler.Instance.SwitchTo(ActionMap.Player);
             gameObject.SetActive(false);
         }
     }

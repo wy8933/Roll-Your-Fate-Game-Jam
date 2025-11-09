@@ -24,7 +24,6 @@ namespace Game
 
         public void SetOff(int SectorID)
         {
-            Debug.Log($"GO:{SectorID}");
             director.Play(SectorTransitionTimeline[SectorID]);
             AudioManager.Instance.PlayMusic(expeditionMusics[Random.Range(0, expeditionMusics.Count)]);
             Player.Instance.SetOxygen(setting.GameSetting.initialOxygen + setting.GameSetting.oxygenPerContainer * Inventory.Instance.ItemCount(oxygenContainerSO));
