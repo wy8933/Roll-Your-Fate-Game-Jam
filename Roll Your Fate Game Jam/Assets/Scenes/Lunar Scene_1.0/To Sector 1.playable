@@ -100,7 +100,7 @@ MonoBehaviour:
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
-    m_BlendOutDuration: 0.21666666666666679
+    m_BlendOutDuration: 0.7666666666666666
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
@@ -127,7 +127,25 @@ MonoBehaviour:
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -142,15 +160,15 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Recorded (1)
   - m_Version: 1
-    m_Start: 6.783333333333333
+    m_Start: 6.233333333333333
     m_ClipIn: 0
-    m_Asset: {fileID: 2666996347036583835}
-    m_Duration: 2.95
+    m_Asset: {fileID: -853423620005973543}
+    m_Duration: 3.500000000000001
     m_TimeScale: 1
     m_ParentTrack: {fileID: -8480175646107084334}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 0.21666666666666679
+    m_BlendInDuration: 0.7666666666666666
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
@@ -230,39 +248,7 @@ MonoBehaviour:
   m_OpenClipOffsetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_ApplyOffsets: 0
---- !u!114 &-5608144460758321627
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
-  m_Name: CinemachineShot
-  m_EditorClassIdentifier: 
-  DisplayName: 
-  VirtualCamera:
-    exposedName: 48d36b878bcb57847a85bb250aacb28d
-    defaultValue: {fileID: 0}
---- !u!114 &-4747470984139915162
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
-  m_Name: CinemachineShot
-  m_EditorClassIdentifier: 
-  DisplayName: 
-  VirtualCamera:
-    exposedName: 8982d8dd3892b2e479d4b84a6c35d4ef
-    defaultValue: {fileID: 0}
---- !u!74 &-3437694524544121409
+--- !u!74 &-7541582938030482411
 AnimationClip:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -280,8 +266,8 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 2.9
-        value: {x: 340, y: -0.000001823112, z: 0.000005330421}
+        time: 3.4666667
+        value: {x: -0.000006830189, y: 20.00002, z: 270}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -298,7 +284,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0, y: 0, z: 0.2599945}
+        value: {x: -0.079956055, y: 0, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -306,8 +292,8 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 2.9
-        value: {x: 0.8405304, y: -3.609066, z: 74.648346}
+        time: 3.4666667
+        value: {x: -2.5796967, y: -0.18883896, z: 74.48834}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -352,7 +338,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 2.9
+    m_StopTime: 3.4666667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -374,7 +360,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
+        value: -0.079956055
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -382,8 +368,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2.9
-        value: 0.8405304
+        time: 3.4666667
+        value: -2.5796967
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -412,8 +398,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2.9
-        value: -3.609066
+        time: 3.4666667
+        value: -0.18883896
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -434,7 +420,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.2599945
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -442,8 +428,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2.9
-        value: 74.648346
+        time: 3.4666667
+        value: 74.48834
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -463,8 +449,8 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 2.9
-        value: 340
+        time: 3.4666667
+        value: -0.000006830189
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -484,8 +470,8 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 2.9
-        value: -0.000001823112
+        time: 3.4666667
+        value: 20.00002
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -505,8 +491,8 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 2.9
-        value: 0.000005330421
+        time: 3.4666667
+        value: 270
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -561,6 +547,38 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events: []
+--- !u!114 &-5608144460758321627
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
+  m_Name: CinemachineShot
+  m_EditorClassIdentifier: 
+  DisplayName: 
+  VirtualCamera:
+    exposedName: 48d36b878bcb57847a85bb250aacb28d
+    defaultValue: {fileID: 0}
+--- !u!114 &-4747470984139915162
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
+  m_Name: CinemachineShot
+  m_EditorClassIdentifier: 
+  DisplayName: 
+  VirtualCamera:
+    exposedName: 8982d8dd3892b2e479d4b84a6c35d4ef
+    defaultValue: {fileID: 0}
 --- !u!114 &-2613509629675250614
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -617,6 +635,28 @@ MonoBehaviour:
   m_Clip: {fileID: -605693676852491057}
   m_Position: {x: -0.13128662, y: 11.500896, z: 4.8413086}
   m_EulerAngles: {x: 70, y: 180, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 0
+  m_ApplyFootIK: 1
+  m_Loop: 0
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &-853423620005973543
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  m_Name: Recorded (2)
+  m_EditorClassIdentifier: 
+  m_Clip: {fileID: -7541582938030482411}
+  m_Position: {x: -131.49995, y: 35.909996, z: 44.59999}
+  m_EulerAngles: {x: 90, y: 180, z: 0}
   m_UseTrackMatchFields: 1
   m_MatchTargetFields: 63
   m_RemoveStartOffset: 0
@@ -1434,28 +1474,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Clip: {fileID: 1445898729270385751}
   m_Position: {x: -0.13128662, y: 35.91, z: 4.8413105}
-  m_EulerAngles: {x: 90, y: 180, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 0
-  m_ApplyFootIK: 1
-  m_Loop: 0
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
---- !u!114 &2666996347036583835
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
-  m_Name: Recorded (2)
-  m_EditorClassIdentifier: 
-  m_Clip: {fileID: -3437694524544121409}
-  m_Position: {x: -131.49995, y: 35.909996, z: 44.59999}
   m_EulerAngles: {x: 90, y: 180, z: 0}
   m_UseTrackMatchFields: 1
   m_MatchTargetFields: 63

@@ -37,7 +37,7 @@ namespace UI.Sector
         private int targetSectorID = -1;
         private void OnPoint(Vector2 dir)
         {
-            if (dir.magnitude > 0.2)
+            if (dir.magnitude > 0.1)
             {
                 if (targetSectorID != -1)
                     sectors[targetSectorID].UpdateHover(false);
@@ -49,12 +49,12 @@ namespace UI.Sector
                 sectors[targetSectorID].UpdateHover(true);
                 Debug.Log(targetSectorID);
             }
-            else
-            {
-                if (targetSectorID != -1)
-                    sectors[targetSectorID].UpdateHover(false);
-                targetSectorID = -1;
-            }
+            // else
+            // {
+            //     if (targetSectorID != -1)
+            //         sectors[targetSectorID].UpdateHover(false);
+            //     targetSectorID = -1;
+            // }
         }
 
         private void OnClick()
