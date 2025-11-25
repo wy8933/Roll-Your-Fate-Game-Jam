@@ -16,7 +16,7 @@ namespace UI.Minimap
         GameObject baseIconGO;
         [SerializeField] private Transform baseTransform;
         [SerializeField] private Transform playerTransform;
-        [SerializeField] float minimapRaidus;
+        [SerializeField] float minimapRadius;
         private Dictionary<GameObject, GameObject> iconDict = new Dictionary<GameObject, GameObject>();        
         private void Start()
         {
@@ -43,14 +43,14 @@ namespace UI.Minimap
         private void Update()
         {
             Debug.Log($"{playerTransform.position}, {(baseTransform.position - playerTransform.position).magnitude}");
-            if ((baseTransform.position - playerTransform.position).magnitude < minimapRaidus)
+            if ((baseTransform.position - playerTransform.position).magnitude < minimapRadius)
             {
                 baseIconGO.SetActive(false);
             }
             else
             {
                 baseIconGO.SetActive(true);
-                baseIconGO.transform.position = playerTransform.position + transform.position + Vector3.ClampMagnitude(baseTransform.position - playerTransform.position, minimapRaidus);
+                baseIconGO.transform.position = playerTransform.position + transform.position + Vector3.ClampMagnitude(baseTransform.position - playerTransform.position, minimapRadius);
                 Vector3 right = (baseTransform.position - playerTransform.position).normalized;
                 right.y = 0;
                 Vector3 forward = new Vector3(0, 1f, 0);
