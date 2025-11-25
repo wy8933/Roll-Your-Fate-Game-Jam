@@ -447,6 +447,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 106524703}
   m_CullTransparentMesh: 1
+--- !u!1 &108426983
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 108426984}
+  - component: {fileID: 108426985}
+  m_Layer: 0
+  m_Name: CreditManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &108426984
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108426983}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 694, y: 390.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &108426985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108426983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cfb797321e586144bfc5e58c937d650, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _creditsSceneName: CreditsScene
 --- !u!1 &110735360
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,9 +1013,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 911235364}
-        m_TargetAssemblyTypeName: MainUIManager, Assembly-CSharp
-        m_MethodName: OpenCredit
+      - m_Target: {fileID: 108426985}
+        m_TargetAssemblyTypeName: CreditsManager, Assembly-CSharp
+        m_MethodName: ShowCredits
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3173,6 +3218,7 @@ MonoBehaviour:
   settingFirstButton: {fileID: 1666317487}
   creditFirstButton: {fileID: 655851775}
   mainMenuButtons: {fileID: 1423485221}
+  title: {fileID: 0}
 --- !u!114 &911235365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6774,3 +6820,4 @@ SceneRoots:
   - {fileID: 1339002106}
   - {fileID: 626948419}
   - {fileID: 1381039199}
+  - {fileID: 108426984}

@@ -72,7 +72,7 @@ public class MainUIManager : MonoBehaviour
     private IEnumerator LoadMain()
     {
         Debug.Log("Start");
-        yield return new WaitForSeconds(15); 
+        yield return new WaitForSeconds(20); 
         Debug.Log(1);
         SceneManager.LoadScene(1);
         Destroy(gameObject);
