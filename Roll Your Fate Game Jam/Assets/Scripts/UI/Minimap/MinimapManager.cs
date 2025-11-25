@@ -42,7 +42,6 @@ namespace UI.Minimap
 
         private void Update()
         {
-            Debug.Log($"{playerTransform.position}, {(baseTransform.position - playerTransform.position).magnitude}");
             if ((baseTransform.position - playerTransform.position).magnitude < minimapRadius)
             {
                 baseIconGO.SetActive(false);

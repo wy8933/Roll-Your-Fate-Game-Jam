@@ -9,6 +9,7 @@ namespace Minigame.Circuit
         Wire[][] Grid = new Wire[4][];
         int[][] connected = new int[4][];
         [SerializeField] private Transform content;
+        [SerializeField] private Transform selectionUI;
         private int X = 0;
         private int Y = 0;
         private bool isInputing = true;
@@ -44,7 +45,7 @@ namespace Minigame.Circuit
                 Y += Mathf.RoundToInt(Mathf.RoundToInt(Mathf.Abs(dir.x)) * Mathf.Sign(dir.x));
                 X = Mathf.Clamp(X, 0, 3);
                 Y = Mathf.Clamp(Y, 0, 3);
-                Debug.Log("X: " + X + "  Y: " + Y);
+                selectionUI.transform.position = Grid[X][Y].transform.position;
                 isInputing = false;
             }
         }
@@ -84,7 +85,6 @@ namespace Minigame.Circuit
         private void DFS(int x, int y)
         {
             Wire wire = Grid[x][y];
-            Debug.Log($"{x}, {y}, {wire.Connection}");
             for (int i = 0; i < 4; i++)
             {
                 if ((wire.Connection & (1 << i)) > 0)
