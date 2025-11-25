@@ -8466,6 +8466,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &226899911 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5037017028332668187, guid: 26079e4402ac2854f8912a12cf69465c, type: 3}
+  m_PrefabInstance: {fileID: 226899908}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &228784584
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38288,6 +38293,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Minimap
       objectReference: {fileID: 0}
+    - target: {fileID: 6169363199208485636, guid: 3aa047c5168be9e4cba6b7e556aca5bf, type: 3}
+      propertyPath: baseIcon
+      value: 
+      objectReference: {fileID: 4184965121187047811, guid: 8fdfdd63ebe203f45a338a1f0a4629d1, type: 3}
+    - target: {fileID: 6169363199208485636, guid: 3aa047c5168be9e4cba6b7e556aca5bf, type: 3}
+      propertyPath: baseTransform
+      value: 
+      objectReference: {fileID: 1180064746}
+    - target: {fileID: 6169363199208485636, guid: 3aa047c5168be9e4cba6b7e556aca5bf, type: 3}
+      propertyPath: minimapRaidus
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169363199208485636, guid: 3aa047c5168be9e4cba6b7e556aca5bf, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 226899911}
     - target: {fileID: 6800131715570620494, guid: 3aa047c5168be9e4cba6b7e556aca5bf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
