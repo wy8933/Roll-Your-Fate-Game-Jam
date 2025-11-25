@@ -18459,8 +18459,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   setting: {fileID: 11400000, guid: 9dc3fd0f8e0019142bb866807e902366, type: 2}
   oxygenContainerSO: {fileID: 11400000, guid: 90e47ebf329e9054d915e40693e8d7c2, type: 2}
-  BasementMusic: []
-  expeditionMusics: []
+  BasementMusic:
+  - {fileID: 8300000, guid: 59a4bf74a8abf174397c532c51780d93, type: 3}
+  expeditionMusics:
+  - {fileID: 8300000, guid: 86a4754befac29f4aa76c076f69c3737, type: 3}
+  - {fileID: 8300000, guid: fed82c2513a58f744934eb4a552d8ee8, type: 3}
   SectorTransitionTimeline:
   - {fileID: 11400000, guid: 25958f26f6027b146a9204f4ffab128b, type: 2}
   - {fileID: 11400000, guid: cf5438587f298b74ebdfbea2e16ea9e3, type: 2}
@@ -53323,6 +53326,14 @@ PlayableDirector:
   - key: {fileID: 8741534618281510203, guid: 304180c47743d7c4bb771f0fce902362, type: 2}
     value: {fileID: 293596078}
   - key: {fileID: 7162443256295919672, guid: 304180c47743d7c4bb771f0fce902362, type: 2}
+    value: {fileID: 1677866773}
+  - key: {fileID: -2613509629675250614, guid: 25958f26f6027b146a9204f4ffab128b, type: 2}
+    value: {fileID: 1677866773}
+  - key: {fileID: 8741534618281510203, guid: cf5438587f298b74ebdfbea2e16ea9e3, type: 2}
+    value: {fileID: 293596078}
+  - key: {fileID: -8480175646107084334, guid: cf5438587f298b74ebdfbea2e16ea9e3, type: 2}
+    value: {fileID: 1705836977}
+  - key: {fileID: -511196008431075151, guid: cf5438587f298b74ebdfbea2e16ea9e3, type: 2}
     value: {fileID: 1677866773}
   m_ExposedReferences:
     m_References:
