@@ -278,85 +278,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Weijie Ye - Programmer
-
-    Shaolin - Programmer
-
-    Wengpeng Liao -
-    Artist
-
-    Kaijie - Artist
-
-    Moore Ji - Producer
-
-    Weijie Ye - Programmer
-
-    Shaolin
-    - Programmer
-
-    Wengpeng Liao - Artist
-
-    Kaijie - Artist
-
-    Moore Ji -
-    Producer
-
-    Weijie Ye - Programmer
-
-    Shaolin - Programmer
-
-    Wengpeng
-    Liao - Artist
-
-    Kaijie - Artist
-
-    Moore Ji - Producer
-
-    Weijie Ye -
-    Programmer
-
-    Shaolin - Programmer
-
-    Wengpeng Liao - Artist
-
-    Kaijie
-    - Artist
-
-    Moore Ji - Producer
-
-    Weijie Ye - Programmer
-
-    Shaolin -
-    Programmer
-
-    Wengpeng Liao - Artist
-
-    Kaijie - Artist
-
-    Moore Ji - Producer
-
-    Weijie
-    Ye - Programmer
-
-    Shaolin - Programmer
-
-    Wengpeng Liao - Artist
-
-    Kaijie
-    - Artist
-
-    Moore Ji - Producer
-
-    Weijie Ye - Programmer
-
-    Shaolin -
-    Programmer
-
-    Wengpeng Liao - Artist
-
-    Kaijie - Artist
-
-    Moore Ji - Producer'
+  m_text: "Producer\nShuyuan Ji\n\nGameplay Programmer\nWeijie Ye   Shaolin Huang\n\nSystem
+    Programmer\nWeijie Ye   Shaolin Huang\n\nUI Programmer\nWeijie Ye   Shaolin Huang\n\nEnvironment
+    Designer\nWenpeng Liao\n\nAnimation Designer\nWenpeng Liao\n\n2D UI Designer\nKaijie
+    Yang\n\nArtist \nKaijie Yang    Wenpeng Liao\n\nSound designer\nShuyuan Ji\n\nLevel
+    Designer\nShuyuan Ji    Wenpeng Liao\n\n\nThanks to Roll Your Fate game jam hosted
+    by professor\nSanchez\nBaker\nWilloughby\nfrom Rochester Institute of Technology\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
