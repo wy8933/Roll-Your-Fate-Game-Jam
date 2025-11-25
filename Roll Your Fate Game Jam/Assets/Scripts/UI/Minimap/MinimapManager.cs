@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Control;
 using Template;
 using UnityEngine;
 
@@ -11,6 +12,11 @@ namespace UI.Minimap
         [SerializeField] Transform icons;
         [SerializeField] GameObject interactableIcon;
         [SerializeField] GameObject logIcon;
+        [SerializeField] GameObject baseIcon;
+        GameObject baseIconGO;
+        [SerializeField] private Transform baseTransform;
+        [SerializeField] private Transform playerTransform;
+        [SerializeField] float minimapRadius;
         private Dictionary<GameObject, GameObject> iconDict = new Dictionary<GameObject, GameObject>();        
         private void Start()
         {
@@ -28,6 +34,27 @@ namespace UI.Minimap
                 GameObject icon = Instantiate(logIcon, icons);
                 icon.transform.position = target.transform.position + transform.position;
                 iconDict[target] = icon;
+            }
+            
+            baseIconGO = Instantiate(baseIcon, icons);
+            baseIconGO.transform.position = baseTransform.position + transform.position;
+        }
+
+        private void Update()
+        {
+            Debug.Log($"{playerTransform.position}, {(baseTransform.position - playerTransform.position).magnitude}");
+            if ((baseTransform.position - playerTransform.position).magnitude < minimapRadius)
+            {
+                baseIconGO.SetActive(false);
+            }
+            else
+            {
+                baseIconGO.SetActive(true);
+                baseIconGO.transform.position = playerTransform.position + transform.position + Vector3.ClampMagnitude(baseTransform.position - playerTransform.position, minimapRadius);
+                Vector3 right = (baseTransform.position - playerTransform.position).normalized;
+                right.y = 0;
+                Vector3 forward = new Vector3(0, 1f, 0);
+                baseIconGO.transform.rotation = Quaternion.LookRotation(forward, Vector3.Cross(right, forward));
             }
         }
 
