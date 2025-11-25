@@ -6,7 +6,7 @@ namespace Interactable
     public class SendBackHome : MonoBehaviour, IInteractable
     {
         public string _prompt;
-        public string Prompt { get; }
+        public string Prompt => _prompt;
         
         public Transform Transform => transform;
 

@@ -241,10 +241,10 @@ MonoBehaviour:
   icons: {fileID: 7942016847283962031}
   interactableIcon: {fileID: 4184965121187047811, guid: 7a7e6e84d41e8234cb00131a38a01ea0, type: 3}
   logIcon: {fileID: 4184965121187047811, guid: cb6e45a88017615498d1ff0ae1b1f35a, type: 3}
-  baseIcon: {fileID: 0}
+  baseIcon: {fileID: 4184965121187047811, guid: 8fdfdd63ebe203f45a338a1f0a4629d1, type: 3}
   baseTransform: {fileID: 0}
   playerTransform: {fileID: 0}
-  minimapRaidus: 60
+  minimapRadius: 60
 --- !u!1 &1953031152432444407
 GameObject:
   m_ObjectHideFlags: 0
