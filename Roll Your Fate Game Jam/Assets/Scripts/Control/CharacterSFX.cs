@@ -1,3 +1,4 @@
+using Control;
 using UnityEngine;
 
 public class CharacterSFX : MonoBehaviour
@@ -6,6 +7,8 @@ public class CharacterSFX : MonoBehaviour
 
     public void PlayWalkSFX()
     {
-        AudioManager.Instance.PlaySFX(walkSFX);
+        PlayerController playerController = GetComponentInParent<PlayerController>();
+        if(playerController.isOnGround)
+            AudioManager.Instance.PlaySFX(walkSFX);
     }
 }
