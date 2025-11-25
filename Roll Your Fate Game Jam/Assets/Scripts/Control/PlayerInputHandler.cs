@@ -22,6 +22,7 @@ namespace Control
         public Action<Vector2> Point;
         public Action Click;
         public Action RightClick;
+        public Action TogglePause;
         #endregion
         
         protected override void Awake()
@@ -34,6 +35,7 @@ namespace Control
         {
             inputAction.Player.Interact.performed += OnInteractPressed;
             inputAction.Player.ToggleHUD.performed += OnToggleHUDPressed;
+            inputAction.Player.TogglePause.performed += OnTogglePausePressed;
             inputAction.UI.Navigate.performed += OnNavigate;
             inputAction.UI.Look.performed += OnLook;
             inputAction.UI.Point.performed += OnPoint;
@@ -45,6 +47,7 @@ namespace Control
         {
             inputAction.Player.Interact.performed -= OnInteractPressed;
             inputAction.Player.ToggleHUD.performed -= OnToggleHUDPressed;
+            inputAction.Player.TogglePause.performed -= OnTogglePausePressed;
             inputAction.UI.Navigate.performed -= OnNavigate;
             inputAction.UI.Point.performed -= OnPoint;
             inputAction.UI.Click.performed -= OnUIClick;
@@ -121,6 +124,11 @@ namespace Control
         protected void OnUIRightClick(InputAction.CallbackContext ctx)
         {
             RightClick?.Invoke();
+        }
+
+        protected void OnTogglePausePressed(InputAction.CallbackContext ctx)
+        {
+           TogglePause?.Invoke();
         }
     }
 
