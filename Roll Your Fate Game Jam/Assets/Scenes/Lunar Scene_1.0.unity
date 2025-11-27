@@ -17119,7 +17119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prompt: Interact
-  minigamePrefab: {fileID: 4729047387666642997, guid: a584e4b8f230ebb428ac4142d074bc0f, type: 3}
+  minigamePrefab: {fileID: 4729047387666642997, guid: 4c4a4a5d02d219b478f44840c7bcef48, type: 3}
   MinigameCleared:
     m_PersistentCalls:
       m_Calls: []
